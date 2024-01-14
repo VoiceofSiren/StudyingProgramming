@@ -63,8 +63,5 @@
 
 
 
-# fetch API
-#### (get more info in https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 
-### - Chrome 브라우저 상에서 F12 키보드를 눌러 개발자 도구를 열고 console에 fetch("API")라고 입력하면 아래와 같은 결과를 얻을 수 있다.
 
