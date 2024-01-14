@@ -9,5 +9,3 @@
 1. Basic and advanced knowledge of JAVA
 2. Basic and advanced knowledge of JavaScript
 3. Back-end development records
-
-### Start date of writing: 14 January, 2024
