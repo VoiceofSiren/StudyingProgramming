@@ -2,7 +2,7 @@
 
 
 ### Purpose of Writing
-1. To develop the skills necessary to become a backend web developer.
+1. To develop the skills necessary to become a back-end web developer.
 2. To keep a record of development.
 
 ### Main contents
