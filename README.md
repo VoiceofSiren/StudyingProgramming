@@ -8,4 +8,5 @@
 ### Main contents
 1. Basic and advanced knowledge of JAVA
 2. Basic and advanced knowledge of JavaScript
-3. Back-end development records
+3. Python-based Algorithms
+4. Back-end development records
