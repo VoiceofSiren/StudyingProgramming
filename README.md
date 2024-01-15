@@ -1,7 +1,7 @@
 # Studying Back-end
 
 ##### Author: Youngmoo Park
-##### Writing Commencement Date: Jan 15, 2024
+##### Date of Commencement: Jan 15, 2024
 <br/>
 
 ### Purpose of Writing
