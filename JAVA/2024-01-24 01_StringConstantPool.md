@@ -1,4 +1,4 @@
-# String
+# String Constant Pool
 
 ### String
     - C언어에서는 char 배열을 이용하여 문자열을 다루지만, JAVA에서는 String 클래스를 통해 쉽게 문자열을 처리할 수 있다.
