@@ -14,4 +14,4 @@
 6. Python-based Algorithms
 7. Back-end development records
 
-#### This includes Korean and English stuffs.
+#### Korean and English stuffs are included.
