@@ -13,3 +13,5 @@
 5. Basic and advanced knowledge of Security
 6. Python-based Algorithms
 7. Back-end development records
+
+#### This includes Korean and English stuffs.
