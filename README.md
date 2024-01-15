@@ -5,7 +5,7 @@
 1. To develop the skills necessary to become a back-end web developer.
 2. To keep a record of development.
 
-### Main contents
+### Main Contents
 1. Basic and advanced knowledge of JAVA
 2. Basic and advanced knowledge of JavaScript
 3. Basic and advanced knowledge of HTTP(s), SSH
