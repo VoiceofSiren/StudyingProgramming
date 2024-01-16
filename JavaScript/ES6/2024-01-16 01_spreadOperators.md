@@ -49,3 +49,40 @@ const str3 = ...str1;
     TypeError: spread argument must have iterable type
 #### --> Spread operators는 배열이나 객체의 요소를 확장하는 데 사용되므로, 문자열 자체로는 iterable하지 않음을 시사한다.
 <br/>
+
+### 3. 배열의 추가
+#### [코드 3-1] - 배열의 마지막에 첨부
+```plaintext
+const numbers1 = [30, 8, ...arr];
+console.log(numbers1);
+```
+#### [결과 3-1]
+    [30, 8, 1, 2, 4, 6]
+---
+#### [코드 3-2] - 배열의 중간에 삽입
+```plaintext
+const numbers2 = [30, ...arr, 8];
+console.log(numbers2);
+```
+#### [결과 3-2]
+    [30, 1, 2, 4, 6, 8]
+---
+#### [코드 3-3] - 배열의 처음에 첨부
+```plaintext
+const numbers3 = [...arr, 30, 8];
+console.log(numbers3);
+```
+#### [결과 3-3]
+    [1, 2, 4, 6, 30, 8]
+#### --> 배열의 index에 관계없이 배열이 잘 덧붙여지는 것을 확인할 수 있다.
+
+
+
+
+
+
+
+
+
+
+
