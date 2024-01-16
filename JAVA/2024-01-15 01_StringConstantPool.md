@@ -8,9 +8,9 @@
 #### JAVA의 String과 관련하여 가지고 있는 기초 지식은 다음과 같다.
 #### [코드 1]
 ```java
-    String str1 = "abc";
-    boolean ifEquals = str1.equals("abc");
-    System.out.println(ifEquals);
+String str1 = "abc";
+boolean ifEquals = str1.equals("abc");
+System.out.println(ifEquals);
 ```
 #### [결과 1]
     true
@@ -22,9 +22,9 @@
 #### 한편, JAVA 입문자 수준에서는 이해하기 어려운 개념이 있는데, 바로 [코드 2]와 [결과 2]를 보도록 하자. 
 #### [코드 2]
 ```java
-    String str1 = "abc";
-    boolean ifEquals = (str1=="abc");
-    System.out.println(ifEquals);
+String str1 = "abc";
+boolean ifEquals = (str1=="abc");
+System.out.println(ifEquals);
 ```
 #### [결과 2]
     true
@@ -37,8 +37,8 @@
 ### 1. 리터럴 생성 방식
 #### [코드 3-1]
 ```java
-    String str1 = "hello";
-    String str2 = "hello";
+String str1 = "hello";
+String str2 = "hello";
 ```
 #### --> [코드 3-1]은 String 참조 변수에 리터럴 상수를 할당하는 방식으로, str1과 str2를 Heap 영역에 있는 String Constant Pool에 할당시키는 방법이다.
 #### String Constant Pool에 대한 설명은 아래의 [그림 1]을 참고하자.
@@ -47,8 +47,8 @@
 ### 2. new 연산자 생성 방식
 #### [코드 3-2]
 ```java
-    String str3 = new String("hello");
-    String str4 = new String("hello");
+String str3 = new String("hello");
+String str4 = new String("hello");
 ```
 #### --> [코드 3-2]는 여타 다른 객체를 생성하는 방법과 동일하게 str3를 Heap 영역에 할당시키는 방법이다.
 
