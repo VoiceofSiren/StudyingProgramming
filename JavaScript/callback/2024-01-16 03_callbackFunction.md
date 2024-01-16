@@ -9,21 +9,11 @@
 ### Array.prototype.filter() API
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter에서 확인 가능.
     - filter() API를 나만의 함수로 직접 구현해 보고자 한다.
+<br/>
 
 #### [코드 1-1]은 filter() API를 나만의 함수로 구현한 myFilter()를 나타내며,
 #### [코드 1-2]는 fx라는 콜백 함수를 정의하고 myFilter()를 호출하는 코드이다.
 #### [결과 1]은 [코드 1-1]과 [코드 1-2]를 실행했을 때 console에 출력되는 결과이다.
-
-### myFilter() 구현 과정
-    1. 파라미터로 문자열을 요소로 갖는 배열과 콜백 함수를 넣는다.
-    2. 반환 값으로 필요한 비어있는 배열 result를 선언한다.
-    3. 배열의 첫 번째 원소부터 마지막 원소까지 순회하면서, 콜백 함수를 조건으로 하여 true일 때 
-       배열 result에 해당 원소를 넣는다.
-    4. 배열 result를 반환한다.
-
-### fx 구현 과정
-    1. element의 길이가 6을 초과하면 true를 반환한다.
-
 #### [코드 1-1]
 ```plaintext
     const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
@@ -51,6 +41,17 @@
   ['exuberant', 'destruction', 'present']
     
 #### --> [결과 1]을 통해 Array.prototype.filter() API를 사용했을 때와 동일한 결과가 나왔음을 확인할 수 있다.
+<br/>
+#### 구현 과정은 아래와 같다.
+### 1. myFilter() 구현 과정
+    1. 파라미터로 문자열을 요소로 갖는 배열과 콜백 함수를 넣는다.
+    2. 반환 값으로 필요한 비어있는 배열 result를 선언한다.
+    3. 배열의 첫 번째 원소부터 마지막 원소까지 순회하면서, 콜백 함수를 조건으로 하여 true일 때 
+       배열 result에 해당 원소를 넣는다.
+    4. 배열 result를 반환한다.
+
+### 2. fx 구현 과정
+    1. element의 길이가 6을 초과하면 true를 반환한다.
 <br/>
 
 ### 콜백 함수 코드 간략화
