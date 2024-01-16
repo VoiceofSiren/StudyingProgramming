@@ -51,6 +51,7 @@
   ['exuberant', 'destruction', 'present']
     
 #### --> [결과 1]을 통해 Array.prototype.filter() API를 사용했을 때와 동일한 결과가 나왔음을 확인할 수 있다.
+<br/>
 
 ### 콜백 함수 코드 간략화
 #### [코드 1-2]에서 콜백 함수 fx는 다음의 두 가지 특징을 가진다.
