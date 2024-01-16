@@ -3,6 +3,7 @@
 
 ### 이 글의 목적
     - JavaScript에서 자주 사용되는 Callback Function의 개념과 쓰임새에 대해 알아보고자 한다.
+<br/>
 
 ### Callback Function
     - 다른 함수의 인자로 전달되는 함수.
