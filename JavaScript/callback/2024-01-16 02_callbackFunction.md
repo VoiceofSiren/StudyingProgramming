@@ -8,15 +8,15 @@
 
 ### Array.prototype.filter() API
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter에서 확인 가능.
-#### 아래의 예제 코드인 [코드 1]을 통해 콜백 함수의 원리를 더 깊게 이해해보도록 하자.
-#### [코드 1]은 주어진 문자열을 요소로 가지는 배열에 대하여 각 요소의 길이가 6보다 큰 문자열들만 필터링하여 console에 출력하는 코드이다.
+    - 아래의 예제 코드인 [코드 1]을 통해 콜백 함수의 원리를 더 깊게 이해해보도록 하자.
+    - [코드 1]은 주어진 문자열을 요소로 가지는 배열에 대하여 각 요소의 길이가 6보다 큰 문자열들만 필터링하여 console에 출력하는 코드이다.
 #### [결과 1]은 [코드 1]을 실행했을 때 console에 출력되는 결과이다.
 
 #### [코드 1]
 ```plaintext
-    const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-    const result = words.filter((word) => word.length > 6);
-    console.log(result);
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter((word) => word.length > 6);
+console.log(result);
 ```
 #### [결과 1]
     ['exuberant', 'destruction', 'present']
@@ -27,12 +27,12 @@
 #### [결과 2]는 [코드 2]를 실행했을 때 console에 출력되는 결과이다.
 #### [코드 2]
 ```plaintext
-    const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-    const wordFunc = (word) => {
-        return word.length > 6;
-    };
-    const result2 = words.filter(wordFunc);
-    console.log(result2);
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+const wordFunc = (word) => {
+    return word.length > 6;
+};
+const result2 = words.filter(wordFunc);
+console.log(result2);
 ```
 #### [결과 2]
     ['exuberant', 'destruction', 'present']
