@@ -8,8 +8,8 @@
 ### 1. 배열의 모든 요소를 순차적으로 출력하기
 #### [코드 1]
 ```plaintext
-    const arr = [1, 2, 4, 6];
-    console.log(...arr);
+const arr = [1, 2, 4, 6];
+console.log(...arr);
 ```
 #### [결과 1]
     1 2 4 6
@@ -18,23 +18,23 @@
 ### 2. 문자열의 모든 요소를 순차적으로 출력하기
 #### [코드 2-1]
 ```plaintext
-    const str1 = 'hello';
-    console.log(str1);
+const str1 = 'hello';
+console.log(str1);
 ```
 #### [결과 2-1]
     hello
 ---
 #### [코드 2-2]
 ```plaintext
-    const str2 = [...str1];
-    console.log(str2);
+const str2 = [...str1];
+console.log(str2);
 ```
 #### [결과 2-2]
     ['h', 'e', 'l', 'l', 'o']
 ---
 #### [코드 2-3]
 ```plaintext
-    console.log(...str1);
+console.log(...str1);
 ```
 #### [결과 2-3]
     h e l l o
@@ -43,7 +43,7 @@
 #### 다만, [코드 2-4]처럼 코드를 작성하려는 경우 유의해야 한다.
 #### [코드 2-4]
 ```plaintext
-    const str3 = ...str1;
+const str3 = ...str1;
 ```
 #### [결과 2-4]
     TypeError: spread argument must have iterable type
