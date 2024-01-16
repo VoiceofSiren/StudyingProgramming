@@ -15,6 +15,7 @@
 4. Basic and advanced knowledge of DataBase
 5. Basic and advanced knowledge of Security
 6. Python-based Algorithms
-7. Back-end development records
+7. Java-based Algorithms
+8. Back-end development records
 
 #### Korean and English stuffs are included.
