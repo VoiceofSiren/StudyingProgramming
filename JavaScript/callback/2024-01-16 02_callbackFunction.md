@@ -28,7 +28,7 @@ console.log(result);
 #### [코드 2]
 ```plaintext
 const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-const wordFunc = (word) => {
+const wordFunc = function (word) {
     return word.length > 6;
 };
 const result2 = words.filter(wordFunc);
@@ -38,17 +38,7 @@ console.log(result2);
     ['exuberant', 'destruction', 'present']
 #### --> [결과 1]과 [결과 2]를 통해 알 수 있듯이, 동일한 배열이 출력되었음을 확인할 수 있다.
 
-
 #### --> 결과적으로, [코드 1]의 (word) => word.length > 6 이 부분이 콜백 함수임을 알 수 있다.
-
-
-
-
-
-
-
-
-
 
 
 
