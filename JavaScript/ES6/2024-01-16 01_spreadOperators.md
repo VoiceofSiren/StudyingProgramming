@@ -8,7 +8,7 @@
 
 ### 1. 배열의 모든 요소를 순차적으로 출력하기
 #### [코드 1]
-```plaintext
+```javascript
 const arr = [1, 2, 4, 6];
 console.log(...arr);
 ```
@@ -18,7 +18,7 @@ console.log(...arr);
 
 ### 2. 문자열의 모든 요소를 순차적으로 출력하기
 #### [코드 2-1]
-```plaintext
+```javascript
 const str1 = 'hello';
 console.log(str1);
 ```
@@ -26,7 +26,7 @@ console.log(str1);
     hello
 ---
 #### [코드 2-2]
-```plaintext
+```javascript
 const str2 = [...str1];
 console.log(str2);
 ```
@@ -34,7 +34,7 @@ console.log(str2);
     ['h', 'e', 'l', 'l', 'o']
 ---
 #### [코드 2-3]
-```plaintext
+```javascript
 console.log(...str1);
 ```
 #### [결과 2-3]
@@ -43,7 +43,7 @@ console.log(...str1);
 
 #### 다만, [코드 2-4]처럼 코드를 작성하려는 경우 유의해야 한다.
 #### [코드 2-4]
-```plaintext
+```javascript
 const str3 = ...str1;
 ```
 #### [결과 2-4]
@@ -53,7 +53,7 @@ const str3 = ...str1;
 
 ### 3. 배열에 배열을 덧붙이기
 #### [코드 3-1] - 배열의 마지막에 첨부
-```plaintext
+```javascript
 const numbers1 = [30, 8, ...arr];
 console.log(numbers1);
 ```
@@ -61,7 +61,7 @@ console.log(numbers1);
     [30, 8, 1, 2, 4, 6]
 ---
 #### [코드 3-2] - 배열의 중간에 삽입
-```plaintext
+```javascript
 const numbers2 = [30, ...arr, 8];
 console.log(numbers2);
 ```
@@ -69,7 +69,7 @@ console.log(numbers2);
     [30, 1, 2, 4, 6, 8]
 ---
 #### [코드 3-3] - 배열의 처음에 첨부
-```plaintext
+```javascript
 const numbers3 = [...arr, 30, 8];
 console.log(numbers3);
 ```
@@ -80,7 +80,7 @@ console.log(numbers3);
 
 ### 4. 배열을 복사하기
 #### [코드 4]
-```plaintext
+```javascript
 const copiedArr = [...arr];
 console.log(copiedArr);
 ```
