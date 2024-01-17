@@ -15,7 +15,7 @@
 #### [코드 1-2]는 fx라는 콜백 함수를 정의하고 myFilter()를 호출하는 코드이다.
 #### [결과 1]은 [코드 1-1]과 [코드 1-2]를 실행했을 때 console에 출력되는 결과이다.
 #### [코드 1-1]
-```plaintext
+```javascript
     const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
     function myFilter(arr, callbackFunc) {
         var result = [];
@@ -29,7 +29,7 @@
     }
 ```
 #### [코드 1-2]
-```plaintext
+```javascript
     fx = (element) => {
         return element.length > 6;
     };
@@ -58,13 +58,13 @@
 ### 콜백 함수 코드 간략화
 #### [코드 1-2]에서 콜백 함수 fx는 다음의 두 가지 특징을 가진다.
         1. 파라미터가 1개이다.
-        2. {} 블록 안에 return문 한 줄만 있다.
+        2. {} 블록 안에 한 줄만 있다.
 #### 위의 특징을 만족하는 콜백 함수의 경우, 두 가지 과정을 거쳐 간략화할 수 있다.
         1. 파라미터의 괄호를 없앤다.
         2. {} 중괄호와 return과 ; (세미 콜론)을 없앤고 한 줄로 정리한다.
 #### [코드 1-3]은 [코드 1-2]를 간략화한 코드이다.
 #### [코드 1-3]
-```plaintext
+```javascript
     newWords = myFilter(words, element => element.length > 6);
     console.log(newWords);
 ```
