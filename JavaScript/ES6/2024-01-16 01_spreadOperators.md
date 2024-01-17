@@ -48,7 +48,8 @@ const str3 = ...str1;
 ```
 #### [결과 2-4]
     TypeError: spread argument must have iterable type
-#### --> Spread operators는 배열이나 객체의 요소를 확장하는 데 사용되므로, 문자열 자체로는 iterable하지 않음을 시사한다.
+#### --> [결과 2-3]에서는 h e l l o가 하나의 문자열이 아니라 h, e, l, l, o 이렇게 총 5개의 요소가 각각 출력되었다는 사실에 유념해야 한다.
+#### const str3 = 'h' 'e' 'l' 'l' 'o';와 같아지므로 [결과 2-4]와 같은 에러가 발생한다.
 <br/>
 
 ### 3. 배열에 배열을 덧붙이기
