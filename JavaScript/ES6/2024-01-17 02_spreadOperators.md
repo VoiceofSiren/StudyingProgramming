@@ -31,3 +31,25 @@ console.log(sum(100, ...numArr));
 <br/>
 
 ### 2. 함수의 가변적 매개변수 사용
+#### 함수를 정의할 때 크기가 가변적인 매개변수로서 활용할 수 있으며,
+#### 이 경우 Spread Operator를 사용한 파라미터는 반드시 마지막에 위치해 있어야 한다.
+#### [코드 2-1]
+```javascript
+function sumFunc(obj, ...arr) {
+    return [obj, ...arr];
+}
+```
+#### [코드 2-2]
+```javascript
+
+console.log(sumFunc({"one": 1, "two": 2}, 3, 4));
+console.log(sumFunc({"one": 1, "two": 2}, 3, 4, 5, 6));
+```
+#### [결과 2]
+```plaintext
+[{"one": 1, "two": 2}, 3, 4]
+[{"one": 1, "two": 2}, 3, 4, 5, 6]
+```
+#### --> 이 방법은 파라미터의 개수를 가변적으로 하고 싶을 때 사용하면 좋다.
+<br/>
+
