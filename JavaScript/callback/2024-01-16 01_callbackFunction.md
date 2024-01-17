@@ -17,7 +17,7 @@
 #### 더 정확히 말하자면, 변수가 함수를 가리키도록 할 수 있다.
 #### [코드 1]은 변수 x가 함수를 가리키는 예시이다.
 #### [코드 1]
-```plaintext
+```javascript
   x = function() {
       return 5;
   }
@@ -28,7 +28,7 @@
 #### JavaScript에서는 함수가 함수를 반환할 수 있다. 즉, 함수가 다른 함수의 반환 값이 될 수 있다.
 #### [코드 2]에서는 x가 함수를 가리키고 있으며, 그 x를 func() 함수가 반환한다.
 #### [코드 2]
-```plaintext
+```javascript
   function func() {
       x = function() {
           return 5;
@@ -43,7 +43,7 @@
 #### [코드 3]에서는 func(x)가 호출되었을 때 함수를 가리키는 x가 func() 함수의 인자로 들어가 실행된다.
 #### [코드 3]을 실행하면 [결과 1]이 정상적으로 출력된다.
 #### [코드 3]
-```plaintext
+```javascript
     x = function() {
         console.log(5);
     }
