@@ -13,7 +13,7 @@
 #### [결과 1]은 [코드 1]을 실행했을 때 console에 출력되는 결과이다.
 
 #### [코드 1]
-```plaintext
+```javascript
 const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
 const result = words.filter((word) => word.length > 6);
 console.log(result);
@@ -26,7 +26,7 @@ console.log(result);
 #### 예제 코드인 [코드 1]을 [코드 2]처럼 변형해 보았다.
 #### [결과 2]는 [코드 2]를 실행했을 때 console에 출력되는 결과이다.
 #### [코드 2]
-```plaintext
+```javascript
 const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
 const wordFunc = function (word) {
     return word.length > 6;
