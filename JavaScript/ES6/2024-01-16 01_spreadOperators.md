@@ -49,10 +49,10 @@ const str3 = ...str1;
 #### [결과 2-4]
     TypeError: spread argument must have iterable type
 #### --> [결과 2-3]에서는 h e l l o가 하나의 문자열이 아니라 h, e, l, l, o 이렇게 총 5개의 요소가 각각 출력되었다는 사실에 유념해야 한다.
+#### 쉽게 말하자면 아래의 코드와 같은 꼴이 되므로 [결과 2-4]와 같은 에러가 발생한다.
 ```javascript
 const str3 = 'h' 'e' 'l' 'l' 'o';
 ``` 
-#### 와 같아지므로 [결과 2-4]와 같은 에러가 발생한다.
 <br/>
 
 ### 3. 배열에 배열을 덧붙이기
