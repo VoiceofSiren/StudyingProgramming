@@ -20,19 +20,29 @@
 ```plaintext
 - 메모리, 입출력장치가 CPU를 중심으로 연결되어 있고, 프로그램과 데이터가 같은 메모리 공간에 저장되어 처리되는 구조.
 ```
-#### 1) CPU
+#### 1) CPU (Central Process Unit)
+- 기계 명령 (Machine Instruction)을 실행하는 장치.
+- 전원이 공급될 때 작동하기 시작하여 메모리에 load된 프로세스를 시작한다.
 #### [구성요소]
 - ALU (Arithmetic Logic Unit)
-- Register
 - Control Unit
-#### [동작 원리]
-```plaintext
-1. 메모리에서 Instruction을 Register에 전달
-2. 
-```
+- Register
+
 
 #### 2) 메모리 (메인 메모리 또는 주기억장치, RAM)
 
 #### 3) 보조기억장치
 
 #### 4) 입출력장치
+
+
+#### [CPU가 명령을 실행하는 과정]
+```plaintext
+1. PC Register에 저장된 다음에 실행될 Instruction의 메모리 주소를 주소 버스에 싣는다.
+2. 주소 버스를 통해 전달된 메모리 주소에 대응하는 메모리의 위치로 이동하여 해당 위치에 저장된 Instruction을 데이터 버스에 싣는다.
+3. 데이터 버스를 통해 전달된 Instruction을 IR에 저장하고, PC는 다음 Instruction의 메모리 주소로 수정한다.
+4. Instruction에 있는 메모리 주소를 주소 버스에 싣는다.
+5. 주소 버스를 통해 전달된 메모리 주소에 대응하는 메모리의 위치로 이동하여 해당 위치에 저장된 데이터를 데이터 버스에 싣는다.
+6. CPU는 데이터 버스를 통해 전달된 데이터를 임시 레지스터에 저장한다.
+7. CPU는 Instruction을 해석하고 실행한다.
+```
