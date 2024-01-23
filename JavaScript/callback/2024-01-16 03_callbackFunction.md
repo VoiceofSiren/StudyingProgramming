@@ -16,26 +16,26 @@
 #### [결과 1]은 [코드 1-1]과 [코드 1-2]를 실행했을 때 console에 출력되는 결과이다.
 #### [코드 1-1]
 ```javascript
-    const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-    function myFilter(arr, callbackFunc) {
-        var result = [];
-        for (let i=0; i < arr.length; i++) {
-            var current = arr[i];
-            if (callbackFunc(current)) {
-                result.push(current);
-            }
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+function myFilter(arr, callbackFunc) {
+    var result = [];
+    for (let i=0; i < arr.length; i++) {
+        var current = arr[i];
+        if (callbackFunc(current)) {
+            result.push(current);
         }
-        return result;
     }
+    return result;
+}
 ```
 #### [코드 1-2]
 ```javascript
-    fx = (element) => {
-        return element.length > 6;
-    };
+fx = (element) => {
+    return element.length > 6;
+};
 
-    newWords = myFilter(words, fx);
-    console.log(newWords);
+newWords = myFilter(words, fx);
+console.log(newWords);
 ```
 #### [결과 1]
   ['exuberant', 'destruction', 'present']
@@ -56,16 +56,16 @@
 
 ### 콜백 함수 코드 간략화
 #### [코드 1-2]에서 콜백 함수 fx는 다음의 두 가지 특징을 가진다.
-        1. 파라미터가 1개이다.
-        2. {} 블록 안에 한 줄만 있다.
+    1. 파라미터가 1개이다.
+    2. {} 블록 안에 한 줄만 있다.
 #### 위의 특징을 만족하는 콜백 함수의 경우, 두 가지 과정을 거쳐 간략화할 수 있다.
-        1. 파라미터의 괄호를 없앤다.
-        2. {} 중괄호와 return과 ; (세미 콜론)을 없앤고 한 줄로 정리한다.
+    1. 파라미터의 괄호를 없앤다.
+    2. {} 중괄호와 return과 ; (세미 콜론)을 없앤고 한 줄로 정리한다.
 #### [코드 1-3]은 [코드 1-2]를 간략화한 코드이다.
 #### [코드 1-3]
 ```javascript
-    newWords = myFilter(words, element => element.length > 6);
-    console.log(newWords);
+newWords = myFilter(words, element => element.length > 6);
+console.log(newWords);
 ```
 #### [코드 1-3]의 형식은 개발자들이 굉장히 많이 사용하는 코드 형식이라고 하니 원리를 잘 이해하고 익숙해지도록 하자.
 
