@@ -18,9 +18,9 @@
 #### [코드 1]은 변수 x가 함수를 가리키는 예시이다.
 #### [코드 1]
 ```javascript
-  x = function() {
-      return 5;
-  }
+x = function() {
+  return 5;
+}
 ```
 <br/>
 
@@ -29,12 +29,12 @@
 #### [코드 2]에서는 x가 함수를 가리키고 있으며, 그 x를 func() 함수가 반환한다.
 #### [코드 2]
 ```javascript
-  function func() {
-      x = function() {
-          return 5;
-      }
-      return x;
+function func() {
+  x = function() {
+      return 5;
   }
+  return x;
+}
 ```
 <br/>
 
@@ -44,17 +44,17 @@
 #### [코드 3]을 실행하면 [결과 1]이 정상적으로 출력된다.
 #### [코드 3]
 ```javascript
-    x = function() {
-        console.log(5);
-    }
-    function func(y) {
-        y();
-    }
-    func(x);
+x = function() {
+    console.log(5);
+}
+function func(y) {
+    y();
+}
+func(x);
 ```
 #### [결과 1]
 ```plaintext
-  5
+5
 ```
 <br/>
 
