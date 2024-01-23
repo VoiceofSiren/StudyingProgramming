@@ -4,15 +4,16 @@
 
 ### 이 글의 목적
     - dx dy Technique를 활용하여 문제를 풀어볼 것이다.
-    - 저작권법 및 기타 관련 법률에 의하여 필자가 작성한 코드만 공유할 수 있다.
+    - 저작권법 및 기타 관련 법률에 의하여 필자가 작성한 코드만 공유할 수 있다. (저작권자 © 브랜치앤바운드)
 <br/>
 
 ### 구현 과정 - 1
 - 
-#### [코드 1]
+#### [코드 1-1]
 ```python
 n = int(input())
 x, y = 0, 0
+
 #     W  S   N  E
 dx = [0, 1, -1, 0]
 dy = [-1, 0, 0, 1]
@@ -23,10 +24,14 @@ dirDict = {
     'N': 2,
     'E': 3
 }
-
+```
+#### [코드 1-2]
+```python
 def if_comeback(x, y):
     return x == 0 and y == 0
-
+```
+#### [코드 1-3]
+```python
 answer = 0
 for i in range(n):
     inputCommand = input().split()
