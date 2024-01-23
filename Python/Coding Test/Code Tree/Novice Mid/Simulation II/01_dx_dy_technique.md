@@ -53,3 +53,23 @@ print(answer)
 23
 ```
 #### --> 정답은 10이지만, 23이 나왔다.
+<br/>
+
+### 구현 과정 - 2
+- 좌표의 변화를 확인하기 위해, [코드 1-3]을 [코드 2]로 수정하였다.
+- [코드 2]는 [코드 1-3]에 현재 위치의 좌표를 출력하는 코드를 추가한 코드이다.
+#### [코드 2]
+answer = 0
+for i in range(n):
+    inputCommand = input().split()
+    direction, distance = inputCommand[0], int(inputCommand[1])
+    dir_num = dirDict[direction]
+    for j in range(distance):
+        x = x + dx[dir_num]
+        y = y + dy[dir_num]
+        print(x, y)
+        answer += 1
+        if if_comeback(x, y):
+            break
+# answer = if_comeback(x, y) and answer or -1
+print(answer)
