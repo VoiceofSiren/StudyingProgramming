@@ -1,5 +1,6 @@
 # dx dy Technique
 ###### Question: https://www.codetree.ai/missions/5/problems/shoot-a-laser-in-the-mirror-2?&utm_source=clipboard&utm_medium=text
+###### Difficulty: Hard
 <br/>
 
 ### 이 글의 목적
