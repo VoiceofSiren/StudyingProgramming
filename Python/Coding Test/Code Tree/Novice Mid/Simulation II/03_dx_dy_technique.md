@@ -1,5 +1,6 @@
 # dx dy technique
 ###### Question: https://www.codetree.ai/missions/5/problems/comfortable-state-on-the-grid?&utm_source=clipboard&utm_medium=text
+###### Difficulty: Normal
 <br/>
 
 ### 이 글의 목적
