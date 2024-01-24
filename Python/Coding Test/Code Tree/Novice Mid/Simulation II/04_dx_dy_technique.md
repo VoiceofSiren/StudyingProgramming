@@ -35,9 +35,6 @@ dir_num = p // 4
 
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
-def change_direction(dir_num, mirror):
-    pass
 ```
 #### [결과 1]
 ```plaintext
