@@ -1,5 +1,6 @@
 # dx dy technique
 ###### Question: https://www.codetree.ai/missions/5/problems/come-back-2?&utm_source=clipboard&utm_medium=text
+###### Difficulty: Easy
 <br/>
 
 ### 이 글의 목적
