@@ -9,15 +9,45 @@
 <br/>
 
 ### < 구현 과정 - 1 >
-- 
+- 그동안에는 Zero-padding 기법을 사용하지 않았지만, 좌표평면 상에서 거울이 있는 범위의 밖에서 접근해야 하기 때문에 Zero-padding 기법을 사용해야 할 것 같은 느낌이 든다.
 #### [코드 1]
 ```python
+n = int(input())
 
+mirrors = [[0 for j in range(n + 2)] for i in range(n + 2)]
+for i in range(1, n + 1):
+    row = input()
+    for j in range(1, n + 1):
+        mirrors[i][j] = row[j-1]
+
+for row in mirrors:
+    for element in row:
+        print(element, end=' ')
+    print()
+
+#     E  S  W   N
+dx = [0, 1, 0, -1]
+dy = [1, 0, -1, 0]
+
+p = int(input())
+
+dir_num = p // 4
+
+def in_range(x, y):
+    return 0 <= x < n and 0 <= y < n
+
+def change_direction(dir_num, mirror):
+    pass
 ```
 #### [결과 1]
 ```plaintext
-
+0 0 0 0 0 
+0 / \ \ 0 
+0 \ \ \ 0 
+0 / \ / 0 
+0 0 0 0 0 
 ```
+#### --> 일단 Zero-padding이 잘 되었음을 확인할 수 있다.
 <br/>
 
 ### < 구현 과정 - 2 >
