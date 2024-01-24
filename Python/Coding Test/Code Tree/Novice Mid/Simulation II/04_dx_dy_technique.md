@@ -37,7 +37,13 @@ for row in mirrors:
 <br/>
 
 ### < 구현 과정 - 2 >
-- 
+
+#### [그림 1-1]
+![IMAGE](../images/mirror01.png)
+#### [그림 1-2]
+![IMAGE](../images/mirror02.png)
+#### [그림 1-3]
+![IMAGE](../images/mirror03.png)
 #### [코드 2]
 ```python
 
