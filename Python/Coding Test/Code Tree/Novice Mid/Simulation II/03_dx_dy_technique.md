@@ -1,5 +1,5 @@
 # dx dy technique
-###### Question: [https://www.codetree.ai/missions/5/problems/come-back-2?&utm_source=clipboard&utm_medium=text](https://www.codetree.ai/missions/5/problems/comfortable-state-on-the-grid?&utm_source=clipboard&utm_medium=text)
+###### Question: https://www.codetree.ai/missions/5/problems/comfortable-state-on-the-grid?&utm_source=clipboard&utm_medium=text
 <br/>
 
 ### 이 글의 목적
