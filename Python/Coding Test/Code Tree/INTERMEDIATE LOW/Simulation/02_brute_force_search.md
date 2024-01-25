@@ -121,34 +121,34 @@ def in_range(x, y):
     return 0 <= x <= n-1 and 0 <= y <= n-1
 
 def horizontal_search(j, square):
-    count_value = 0
+    count_value = 1
     for i in range(n):
         if square[i][j] == square[i][j+1]:
             count_value += 1
             print(f'h: x={i}, y={j}, cv={count_value}')
-            if count_value == m - 1:
+            if count_value == m:
                 return 1
         else:
-            count_value = 0
+            count_value = 1
     return 0
 
 def vertical_search(i, square):
-    count_value = 0
+    count_value = 1
     for j in range(n):
         if square[i][j] == square[i+1][j]:
             count_value += 1
             print(f'v: x={i}, y={j}, cv={count_value}')
-            if count_value == m - 1:
+            if count_value == m:
                 return 1
         else:
-            count_value = 0
+            count_value = 1
     return 0
 
 answer = 0
-for i in range(loop_count):
+for i in range(loop_count): # i = 0, 1
     answer += vertical_search(i, square)
 
-for j in range(loop_count):
+for j in range(loop_count): # j = 0, 1
     answer += horizontal_search(j, square)
 
 print(answer)
@@ -160,3 +160,5 @@ v: x=1, y=0, cv=1
 h: x=0, y=1, cv=1
 3
 ```
+#### --> 문제에서 주어진 조건을 만족하는 좌표를 console에 출력해 보았더니, 내가 작성한 로직의 문제점을 파악했다.
+#### m개의 연속되는 수열만 체크하다 보니, m개보다 더 많이 연속되는 수열도 한 개로 계산해야 하는데 여러 번 카운트된다.
