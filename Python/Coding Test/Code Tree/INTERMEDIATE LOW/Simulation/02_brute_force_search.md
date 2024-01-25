@@ -165,6 +165,38 @@ h: x=0, y=1, cv=1
 <br/>
 
 ### < 구현 과정 - 4 >
-
+- 별도의 순열 list를 만들고 수직 탐색과 수평 탐색 시 그때마다 순열 list를 새로 초기화해주는 방식으로 코드를 다시 짰다.
 #### [코드 4-1]
 ```python
+n, m = list(map(int, input().split()))
+square = [list(map(int, input().split())) for _ in range(n)]
+sequence = [0 for _ in range(n)]
+
+def is_happy():
+    consecutive_count, max_count = 1, 1
+    for i in range(1, n):
+        if sequence[i - 1] == sequence[i]:
+            consecutive_count += 1
+        else:
+            consecutive_count = 1
+        max_count = max(max_count, consecutive_count)
+    return max_count >= m
+
+
+happy_count = 0
+for i in range(n):
+    sequence = square[i][:]
+    if is_happy():
+        happy_count += 1
+
+
+for j in range(n):
+    for i in range(n):
+        sequence[i] = square[i][j]
+    if is_happy():
+            happy_count += 1
+
+print(happy_count)
+```
+#### [결과 4]
+```plaintext
