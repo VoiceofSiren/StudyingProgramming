@@ -106,8 +106,57 @@ print(answer)
 #### [결과 2]
 ```plaintext
 4
+```
 <br/>
 
 ### < 구현 과정 - 3 >
 
 #### [코드 3-1]
+```python
+n, m = list(map(int, input().split()))
+square = [list(map(int, input().split())) for _ in range(n)]
+loop_count = n - m + 1
+
+def in_range(x, y):
+    return 0 <= x <= n-1 and 0 <= y <= n-1
+
+def horizontal_search(j, square):
+    count_value = 0
+    for i in range(n):
+        if square[i][j] == square[i][j+1]:
+            count_value += 1
+            print(f'h: x={i}, y={j}, cv={count_value}')
+            if count_value == m - 1:
+                return 1
+        else:
+            count_value = 0
+    return 0
+
+def vertical_search(i, square):
+    count_value = 0
+    for j in range(n):
+        if square[i][j] == square[i+1][j]:
+            count_value += 1
+            print(f'v: x={i}, y={j}, cv={count_value}')
+            if count_value == m - 1:
+                return 1
+        else:
+            count_value = 0
+    return 0
+
+answer = 0
+for i in range(loop_count):
+    answer += vertical_search(i, square)
+
+for j in range(loop_count):
+    answer += horizontal_search(j, square)
+
+print(answer)
+```
+#### [결과 3]
+```plaintext
+v: x=0, y=0, cv=1
+v: x=1, y=0, cv=1
+h: x=0, y=1, cv=1
+3
+```
