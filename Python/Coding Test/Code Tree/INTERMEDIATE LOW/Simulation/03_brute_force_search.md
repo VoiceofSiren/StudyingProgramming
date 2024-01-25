@@ -9,10 +9,9 @@
 <br/>
 
 ### < 구현 과정 - 1 >
-
+- 2차원 배열의 각 행의 마지막 원소를 임시 변수에 할당한 후 각 행에서 오른쪽으로 한 칸씩 shift 시킨 후,
+- 1행의 임시 변수의 값을 2행의 첫 번째 요소에, 2행의 임시 변수의 값을 1행의 첫 번째 요소에 할당하는 로직을 구현하고자 한다.
 #### [코드 1]
-
-
 ```python
 n, t = list(map(int, input().split()))
 
@@ -35,7 +34,14 @@ for i in range(2):
         print(c_belt[i][j], end=' ')
     print()
 ```
-
+#### [결과 1]
+```plaintext
+Traceback (most recent call last):
+  File "/tmp/Main.py", line 1, in <module>
+    n, t = list(map(int, input().split()))
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+```
 
 
 
