@@ -1,3 +1,15 @@
+# dx dy technique
+###### Question: 
+###### Difficulty: Easy
+<br/>
+
+### 이 글의 목적
+    - 
+    - 저작권법 및 기타 관련 법률에 의하여 필자가 작성한 코드만 공유할 수 있다. (저작권자 © 브랜치앤바운드)
+<br/>
+
+### < 구현 과정 - 1 >
+
 n = int(input())
 square = [list(map(int, input().split())) for _ in range(n)]
 
