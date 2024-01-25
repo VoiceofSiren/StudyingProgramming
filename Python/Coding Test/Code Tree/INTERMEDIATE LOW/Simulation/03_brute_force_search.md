@@ -13,7 +13,7 @@
 #### [코드 1]
 
 
-
+```python
 n, t = list(map(int, input().split()))
 
 c_belt = [list(map(int, input().split())) for _ in range(2)]
@@ -34,12 +34,14 @@ for i in range(2):
     for j in range(n):
         print(c_belt[i][j], end=' ')
     print()
-
+```
 
 
 
 
 -----------------------------------
+#### [코드 2]
+```python
 n, t = list(map(int, input().split()))
 
 c_belt = [list(map(int, input().split())) for _ in range(2)]
@@ -62,3 +64,4 @@ for i in range(2):
     for j in range(n):
         print(c_belt[i][j], end=' ')
     print()
+```
