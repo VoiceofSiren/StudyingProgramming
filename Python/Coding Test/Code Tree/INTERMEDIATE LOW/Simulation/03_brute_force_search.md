@@ -1,5 +1,6 @@
 # Brute Force Search
 ###### Question: https://www.codetree.ai/missions/2/problems/conveyor-belt?&utm_source=clipboard&utm_medium=text
+###### Difficulty: Easy
 <br/>
 
 
