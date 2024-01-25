@@ -63,3 +63,51 @@ IndexError: list index out of range
 
 #### [코드 2-1]
 ```python
+n, m = list(map(int, input().split()))
+square = [list(map(int, input().split())) for _ in range(n)]
+loop_count = n - m + 1
+
+def in_range(x, y):
+    return 0 <= x <= n-1 and 0 <= y <= n-1
+
+def horizontal_search(j, square):
+    count_value = 0
+    for i in range(n):
+        for y in range(j, j + m):
+            if square[i][y] == square[i][y+1]:
+                count_value += 1
+            else:
+                count_value = 0
+            if count_value == m - 1:
+                return 1
+    return 0
+
+def vertical_search(i, square):
+    count_value = 0
+    for j in range(n):
+        for x in range(i, i + m):
+            if square[x][j] == square[x+1][j]:
+                count_value += 1
+            else:
+                count_value = 0
+            if count_value == m - 1:
+                return 1
+    return 0
+
+answer = 0
+for i in range(loop_count):
+    answer += vertical_search(i, square)
+
+for j in range(loop_count):
+    answer += horizontal_search(j, square)
+
+print(answer)
+```
+#### [결과 2]
+```plaintext
+4
+<br/>
+
+### < 구현 과정 - 3 >
+
+#### [코드 3-1]
