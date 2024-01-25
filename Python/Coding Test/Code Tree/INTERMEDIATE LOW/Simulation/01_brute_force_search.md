@@ -1,4 +1,4 @@
-# dx dy technique
+# Brute Force Search
 ###### Question: https://www.codetree.ai/missions/2/problems/best-place-of-33?&utm_source=clipboard&utm_medium=text
 ###### Difficulty: Easy
 <br/>
