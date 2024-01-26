@@ -59,7 +59,8 @@ output: 6
 <br/>
 
 ### 2. Arrow Function
-
+- function 키워드 대신 화살표 (=>)를 사용하여 화살표 함수를 정의할 수 있다.
+#### 1) 기본적인 화살표 함수의 문법
 #### [코드 3-1]
 ```javascript
 const combine = (x, y, z) => {
@@ -76,3 +77,7 @@ console.log('output:', combine(1, 2, 3));
 input: 1 2 3
 output: 6
 ```
+#### 2) 화살표 함수의 변형
+- 
+#### [코드 4-1]
+
