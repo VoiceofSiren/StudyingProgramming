@@ -59,3 +59,20 @@ output: 6
 <br/>
 
 ### 2. Arrow Function
+
+#### [코드 3-1]
+```javascript
+const combine = (x, y, z) => {
+    console.log(`input: ${x} ${y} ${z}`);
+    return x + y + z;
+}
+```
+#### [코드 3-2]
+```javascript
+console.log('output:', combine(1, 2, 3));
+```
+#### [결과 3]
+```plaintext
+input: 1 2 3
+output: 6
+```
