@@ -39,16 +39,13 @@ for i in range(2):
 ```
 #### [결과 1]
 ```plaintext
-Traceback (most recent call last):
-  File "/tmp/Main.py", line 1, in <module>
-    n, t = list(map(int, input().split()))
-    ^^^^
-ValueError: not enough values to unpack (expected 2, got 1)
+3 2 2 
+5 5 6 
 ```
-#### --> 
+#### --> 그림을 잘못 봐서 문제를 잘못 이해하였다.
 <br/>
 
-### < 구현 과정 - 1 >
+### < 구현 과정 - 2 >
 -
 #### [코드 2-1]
 ```python
