@@ -3,6 +3,8 @@
 
 ### 이 글의 목적
     - Arrow Function (화살표 함수)에 대하여 알아보고자 한다.
+    - 이번 글에서는 화살표 함수의 기본적인 문법에 대해서만 이해할 것이며,
+      더 자세한 내용은 추후 새로운 글을 작성하면서 알아볼 예정이다.
 <br/>
 
 ### 1. (Regular) Function
@@ -110,8 +112,8 @@ console.log(getFirstElement(numArr));
 50
 ```
 #### --> [코드 4-1]과 [코드 4-2]에 대한 결과와 [코드 5-1]과 [코드 5-2]에 대한 결과가 일치함을 확인할 수 있다.
-- 다만, JavaScript Object를 return하는 Arrow Function의 경우 중괄호가 문법의 혼란을 야기할 수 있으므로, 반드시 [코드 6-1]에서처럼 JavaScript Object를 소괄호로 감싸주어야 한다.
-#### [코드 6-1]
+- 다만, JavaScript Object를 return하는 Arrow Function의 경우 중괄호가 문법의 혼란을 야기할 수 있으므로, 반드시 [코드 6]에서처럼 JavaScript Object를 소괄호로 감싸주어야 한다.
+#### [코드 6]
 ```javascript
 const getJSObject = () => ({"key": "value"})
 ```
