@@ -19,10 +19,14 @@ square = [list(map(int, input().split())) for _ in range(n)]
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 1-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 1-3]
+```python
 def move(r, c):
     dir_num, max_value = 0, 0
     for dir_num in range(4):
@@ -42,7 +46,9 @@ def move(r, c):
     r = r + dx[dir_num]
     c = c + dy[dir_num]
     print(square[r][c], end=' ')
-
+```
+#### [코드 1-4]
+```python
 for _ in range(5):
     move(r, c)
 ```
@@ -53,7 +59,7 @@ for _ in range(5):
 <br/>
 
 ### < 구현 과정 - 2 >
-- r행 c열은 (r-1, c-1) 인덱스에 있는 요소를 가리키므로 r, c 값을 입력 받자마자 1만큼 감소시켜 계산에 혼동이 없도록 하였다.
+- 원하는 결과가 나오지 않아 각각의 r, c 위치에 대하여 해당 칸의 값까지 출력하는 Debugging을 위한 print() 코드를 추가하였다.
 #### [코드 2-1]
 ```python
 n, r, c = tuple(map(int, input().split()))
@@ -64,10 +70,14 @@ print('===============================')
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 2-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 2-3]
+```python
 def get_max_value():
     max_value = 0
     for dir_num in range(4):
@@ -77,7 +87,9 @@ def get_max_value():
             continue
         max_value = max(max_value, square[nx][ny])
     return max_value
-
+```
+#### [코드 2-4]
+```python
 def move(r, c):
     dir_num = 0
     max_value = get_max_value()
@@ -95,7 +107,9 @@ def move(r, c):
     c = c + dy[dir_num]
     print(f'r = {r}, c = {c}, square[{r}][{c}] = {square[r][c]}')
     print('-------------------------------')
-
+```
+#### [코드 2-5]
+```python
 for _ in range(5):
     move(r, c)
 ```
@@ -119,6 +133,7 @@ max_value = 10
 dir_num = 3
 r = 1, c = 2, square[1][2] = 10
 ```
+#### --> 임시로 반복문을 5번까지만 돌도록 했는데, 계속 같은 좌표에서 멤도는 것을 확인할 수 있다.
 <br/>
 
 ### < 구현 과정 - 3 >
@@ -137,7 +152,9 @@ dy = [0, 0, -1, 1]
 
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 3-2]
+```python
 def get_max_value():
     max_value = 0
     for dir_num in range(4):
@@ -147,7 +164,9 @@ def get_max_value():
             continue
         max_value = max(max_value, square[nx][ny])
     return max_value
-
+```
+#### [코드 3-3]
+```python
 def move():
     global r, c
     dir_num = 0
@@ -166,7 +185,9 @@ def move():
     c = c + dy[dir_num]
     print(f'r = {r}, c = {c}, square[{r}][{c}] = {square[r][c]}')
     print('-------------------------------')
-
+```
+#### [코드 3-4]
+```python
 for _ in range(5):
     move()
 ```
@@ -195,6 +216,7 @@ dir_num = 2
 r = 1, c = 2, square[1][2] = 10
 -------------------------------
 ```
+#### --> r의 값은 변하지 않고 c의 값은 2와 3에서 계속 왔다갔다 한다...
 <br/>
 
 ### < 구현 과정 - 4 >
@@ -210,10 +232,14 @@ print('===============================')
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 4-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 4-3]
+```python
 def compare():
     dir_num = -1
     for i in range(4):
@@ -225,7 +251,9 @@ def compare():
             dir_num = i
             break
     return dir_num
-
+```
+#### [코드 4-4]
+```python
 def move():
     global r, c
     dir_num = compare()
@@ -239,7 +267,9 @@ def move():
     print(f'r = {r}, c = {c}, square[{r}][{c}] = {square[r][c]}')
     print('-------------------------------')
     return True
-
+```
+#### [코드 4-5]
+```python
 while True:
     m = move()
     if m == False:
@@ -272,10 +302,14 @@ print(square[r][c], end=' ')
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 5-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 5-3]
+```python
 def compare():
     dir_num = -1
     for i in range(4):
@@ -287,7 +321,9 @@ def compare():
             dir_num = i
             break
     return dir_num
-
+```
+#### [코드 5-4]
+```python
 def move():
     global r, c
     dir_num = compare()
@@ -299,7 +335,9 @@ def move():
     c = c + dy[dir_num]
     print(square[r][c], end=' ')
     return True
-
+```
+#### [코드 5-5]
+```python
 while True:
     m = move()
     if m == False:
