@@ -78,6 +78,39 @@ input: 1 2 3
 output: 6
 ```
 #### 2) 화살표 함수의 변형
-- 
+- [코드 4-1]처럼 매개변수가 한 개이고 {}블록 내부에 한 줄의 코드만 있는 Arrow Function이 있다고 가정하자.
+- [결과 4]는 [코드 4-1]과 [코드 4-2]에 대한 출력 결과이다.
 #### [코드 4-1]
-
+```javascript
+const getFirstElement = (arr) => {
+    return arr[0];
+}
+```
+#### [코드 4-2]
+```javascript
+numArr = [50, 51, 52, 53]
+console.log(getFirstElement(numArr));
+```
+#### [결과 4]
+```plaintext
+50
+```
+- [코드 4-1]처럼 작성된 코드는 [코드 5-1]처럼 형태를 간략화하여 작성될 수 있다.
+#### [코드 5-1]
+```javascript
+const getFirstElement = arr => arr[0]
+```
+#### [코드 5-2]
+```javascript
+numArr = [50, 51, 52, 53]
+console.log(getFirstElement(numArr));
+```
+#### [결과 5]
+```plaintext
+50
+```
+#### --> [코드 4-1]과 [코드 4-2]에 대한 결과와 [코드 5-1]과 [코드 5-2]에 대한 결과가 일치함을 확인할 수 있다.
+- 다만, JavaScript Object를 return하는 Arrow Function의 경우 중괄호가 문법의 혼란을 야기할 수 있으므로, 반드시 [코드 6-1]에서처럼 JavaScript Object를 소괄호로 감싸주어야 한다.
+#### [코드 6-1]
+```javascript
+```
