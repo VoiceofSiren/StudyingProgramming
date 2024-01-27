@@ -113,4 +113,5 @@ console.log(getFirstElement(numArr));
 - 다만, JavaScript Object를 return하는 Arrow Function의 경우 중괄호가 문법의 혼란을 야기할 수 있으므로, 반드시 [코드 6-1]에서처럼 JavaScript Object를 소괄호로 감싸주어야 한다.
 #### [코드 6-1]
 ```javascript
+const getJSObject = () => ({"key": "value"})
 ```
