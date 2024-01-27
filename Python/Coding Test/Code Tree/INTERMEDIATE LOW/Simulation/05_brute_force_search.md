@@ -238,7 +238,7 @@ fall_down2: [0, 3, 2, 4]
 ### < 구현 과정 - 4 >
 - debugging을 위한 print()를 없애보았다.
 - 애석하게도 다른 테스트케이스에서 오답이 발생하였다.
-#### [코드 4]
+#### [코드 4-1]
 ```python
 n = int(input())
 square = [list(map(int, input().split())) for _ in range(n)]
@@ -248,11 +248,14 @@ r, c = r - 1, c - 1
 selected_num = square[r][c]
 loop_count = selected_num - 1
 print(f'selected_num: square[{r}][{c}] = {square[r][c]}')
-
+```
+#### [코드 4-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
-
+```
+#### [코드 4-3]
+```python
 def explode(r, c, square):
     for i in range(r - loop_count, r + loop_count + 1):
         if not in_range(i, 0):
@@ -270,15 +273,18 @@ def explode(r, c, square):
             print(element, end=' ')
         print()
     print('---------------')
-            
-
+```
+#### [코드 4-4]
+```python
 def count_zeros(column):
     count_value = 0
     for c in column:
         if c == 0:
             count_value += 1
     return count_value
-
+```
+#### [코드 4-5]
+```python
 def get_index_of_first_zero(column):
     index = 0
     for c in column:
@@ -287,14 +293,18 @@ def get_index_of_first_zero(column):
         else:
             index += 1
     return index
-
+```
+#### [코드 4-6]
+```python
 def get_index_of_last_zero(column):
     index = n - 1
     for index in range(n-1, -1, -1):
         if column[index] == 0:
             break
     return index
-
+```
+#### [코드 4-7]
+```python
 def fall_down(r, c, square):
     for i in range(n):
         column = []
@@ -320,7 +330,9 @@ def fall_down(r, c, square):
         print('fall_down2:', column)
         for j in range(n):
             square[j][i] = column[j]
-
+```
+#### [코드 4-8]
+```python
 explode(r, c, square)
 fall_down(r, c, square)
 
@@ -371,7 +383,7 @@ fall_down2: [1, 1, 1, 1, 1, 1]
 - 각 열에서 마지막 0의 index를 구하는 함수의 로직이 잘못되었음을 깨닫고 수정하였다.
 - 각 열에서 0의 개수에 따라 요소를 shift시키는 로직을 수정하였다.
 - Debugging을 위한 print() 코드를 주석으로 처리하였다.
-#### [코드 5]
+#### [코드 5-1]
 ```python
 n = int(input())
 square = [list(map(int, input().split())) for _ in range(n)]
@@ -381,11 +393,14 @@ r, c = r - 1, c - 1
 selected_num = square[r][c]
 loop_count = selected_num - 1
 # print(f'selected_num: square[{r}][{c}] = {square[r][c]}')
-
+```
+#### [코드 5-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
-
+```
+#### [코드 5-3]
+```python
 def explode(r, c, square):
     for i in range(r - loop_count, r + loop_count + 1):
         if not in_range(i, 0):
@@ -402,16 +417,19 @@ def explode(r, c, square):
     #     for element in row:
     #         print(element, end=' ')
     #     print()
-    # print('---------------')
-            
-
+    # print('---------------')           
+```
+#### [코드 5-4]
+```python
 def count_zeros(column):
     count_value = 0
     for c in column:
         if c == 0:
             count_value += 1
     return count_value
-
+```
+#### [코드 5-5]
+```python
 def get_index_of_first_zero(column):
     index = 0
     for c in column:
@@ -420,14 +438,18 @@ def get_index_of_first_zero(column):
         else:
             index += 1
     return index
-
+```
+#### [코드 5-6]
+```python
 def get_index_of_last_zero(column):
     index = n - 1
     for index in range(n-1, -1, -1):
         if column[index] == 0:
             break
     return index
-
+```
+#### [코드 5-7]
+```python
 def fall_down(r, c, square):
     for i in range(n):
         column = []
@@ -453,7 +475,9 @@ def fall_down(r, c, square):
         # print('fall_down2:', column)
         for j in range(n):
             square[j][i] = column[j]
-
+```
+#### [코드 5-8]
+```python
 explode(r, c, square)
 fall_down(r, c, square)
 
