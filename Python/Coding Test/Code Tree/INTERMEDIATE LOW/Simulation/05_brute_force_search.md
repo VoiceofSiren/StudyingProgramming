@@ -9,8 +9,7 @@
 <br/>
 
 ### < 구현 과정 - 1 >
-- 2차원 배열의 각 행의 마지막 원소를 임시 배열에 할당한 후 각 행에서 오른쪽으로 한 칸씩 shift 시킨 후,
-- k행의 임시 변수의 값을 (k+1)행의 첫 번째 요소에 할당하는 로직을 구현하고자 한다.
+- r행 c열은 (r-1, c-1) 인덱스에 있는 요소를 가리키므로 r, c 값을 입력 받자마자 1만큼 감소시켜 계산에 혼동이 없도록 하였다.
 #### [코드 1-1]
 ```python
 n = int(input())
@@ -22,10 +21,12 @@ selected_num = square[r][c]
 loop_count = selected_num - 1
 print(f'selected_num: square[{r}][{c}] = {square[r][c]}')
 ```
+#### [코드 1-2]
 ```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
 ```
+#### [코드 1-3]
 ```python
 def explode(r, c, square):
     for i in range(r - loop_count, r + loop_count):
@@ -35,6 +36,7 @@ def explode(r, c, square):
             else:
                 square[i][j] = 0
 ```
+#### [코드 1-4]
 ```python
 def count_zeros(column):
     count_value = 0
@@ -43,6 +45,7 @@ def count_zeros(column):
             count_value += 1
     return count_value
 ```
+#### [코드 1-5]
 ```python
 def get_index_of_first_zero(column):
     index = 0
@@ -53,6 +56,7 @@ def get_index_of_first_zero(column):
             index += 1
     return index
 ```
+#### [코드 1-6]
 ```python
 def get_index_of_last_zero(column):
     index = len(column) - 1
@@ -63,6 +67,7 @@ def get_index_of_last_zero(column):
             index -= 1
     return index
 ```
+#### [코드 1-7]
 ```python
 def fall_down(r, c, square):
     for i in range(n):
@@ -82,6 +87,7 @@ def fall_down(r, c, square):
         for j in range(n):
             square[j][i] = column[j]
 ```
+#### [코드 1-8]
 ```python
 explode(r, c, square)
 fall_down(r, c, square)
@@ -107,12 +113,12 @@ fall_down2: [3, 3, 2, 4]
 3 0 0 2
 4 1 6 4 
 ```
+#### --> 0이 십자가 모양으로 출력되어야 하는데 사각형 모양으로 떴고 범위도 뭔가 잘못된 것 같다.
 <br/>
 
-
 ### < 구현 과정 - 2 >
-- 2차원 배열의 각 행의 마지막 원소를 임시 배열에 할당한 후 각 행에서 오른쪽으로 한 칸씩 shift 시킨 후,
-- k행의 임시 변수의 값을 (k+1)행의 첫 번째 요소에 할당하는 로직을 구현하고자 한다.
+- [코드 1-3]에 있던 explode() 함수에 i와 j의 범위를 마지막 한 칸씩 늘려주고고 Debugging을 위한 print() 코드를 추가하였다.
+- 폭발하는 범위가 십자가이기 위해서는 이중 for문을 돌리면 안 되고 x 축 기준으로 한 번, y 축 기준으로 for문을 한 번씩 돌려야 한다는 사실을 깨달았다.
 #### [코드 2-1]
 ```python
 def explode(r, c, square):
@@ -156,62 +162,13 @@ fall_down2: [0, 0, 0, 4]
 4 5 0 4 
 
 ```
+#### --> 폭발하는 함수는 정상적으로 동작함을 확인했다.
 <br/>
 
-
 ### < 구현 과정 - 3 >
-- 2차원 배열의 각 행의 마지막 원소를 임시 배열에 할당한 후 각 행에서 오른쪽으로 한 칸씩 shift 시킨 후,
-- k행의 임시 변수의 값을 (k+1)행의 첫 번째 요소에 할당하는 로직을 구현하고자 한다.
+- 각 열에서 마지막 0의 index를 구해오는 함수와 폭발 후 떨어지는 함수를 일부 수정하였다.
 #### [코드 3-1]
 ```python
-n = int(input())
-square = [list(map(int, input().split())) for _ in range(n)]
-r, c = tuple(map(int, input().split()))
-r, c = r - 1, c - 1
-
-selected_num = square[r][c]
-loop_count = selected_num - 1
-print(f'selected_num: square[{r}][{c}] = {square[r][c]}')
-
-def in_range(x, y):
-    return 0 <= x < n and 0 <= y < n
-
-
-def explode(r, c, square):
-    for i in range(r - loop_count, r + loop_count + 1):
-        if not in_range(i, 0):
-            continue
-        else:
-            square[i][c] = 0
-    for j in range(c - loop_count, c + loop_count + 1):
-        if not in_range(0, j):
-            continue
-        else:
-            square[r][j] = 0
-    print('--- explode ---')
-    for row in square:
-        for element in row:
-            print(element, end=' ')
-        print()
-    print('---------------')
-            
-
-def count_zeros(column):
-    count_value = 0
-    for c in column:
-        if c == 0:
-            count_value += 1
-    return count_value
-
-def get_index_of_first_zero(column):
-    index = 0
-    for c in column:
-        if c == 0:
-            return index
-        else:
-            index += 1
-    return index
-
 def get_index_of_last_zero(column):
     index = len(column) - 1
     for c in column:
@@ -220,7 +177,9 @@ def get_index_of_last_zero(column):
         else:
             index -= 1
     return index - 1
-
+```
+#### [코드 3-2]
+```python
 def fall_down(r, c, square):
     for i in range(n):
         column = []
@@ -246,14 +205,6 @@ def fall_down(r, c, square):
         print('fall_down2:', column)
         for j in range(n):
             square[j][i] = column[j]
-
-explode(r, c, square)
-fall_down(r, c, square)
-
-for i in range(n):
-    for j in range(n):
-        print(square[i][j], end=' ')
-    print()
 ```
 #### [결과 3]
 ```plaintext
@@ -281,12 +232,12 @@ fall_down2: [0, 3, 2, 4]
 3 1 0 2 
 4 5 4 4
 ```
+#### --> ei (end index) 값이 뭔가 이상하다...
 <br/>
 
 ### < 구현 과정 - 4 >
 - debugging을 위한 print()를 없애보았다.
 - 애석하게도 다른 테스트케이스에서 오답이 발생하였다.
-
 #### [코드 4]
 ```python
 n = int(input())
@@ -417,9 +368,9 @@ fall_down2: [1, 1, 1, 1, 1, 1]
 <br/>
 
 ### < 구현 과정 - 5 >
-- debugging을 위한 print()를 없애보았다.
-- 애석하게도 다른 테스트케이스에서 오답이 발생하였다.
-
+- 각 열에서 마지막 0의 index를 구하는 함수의 로직이 잘못되었음을 깨닫고 수정하였다.
+- 각 열에서 0의 개수에 따라 요소를 shift시키는 로직을 수정하였다.
+- Debugging을 위한 print() 코드를 주석으로 처리하였다.
 #### [코드 5]
 ```python
 n = int(input())
@@ -520,3 +471,4 @@ for i in range(n):
 4 5 4 3 1 1 
 1 1 1 1 1 1 
 ```
+#### --> 다른 테스트 케이스에 대하여도 정답이 정상적으로 출력된 것을 확인할 수 있다.
