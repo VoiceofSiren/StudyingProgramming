@@ -9,8 +9,8 @@
 <br/>
 
 ### < 구현 과정 - 1 >
--
-#### [코드 1]
+- 각 칸에서 최댓값을 구한 후 각 칸에서 다시 dx dy Technique를 활용해 해당 칸에서 반복문을 돌리다가 최댓값일 때 멈추는 방식으로 구현하고자 한다.
+#### [코드 1-1]
 ```python
 n, m, t = tuple(map(int, input().split()))
 
@@ -32,10 +32,14 @@ count = [
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 1-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 1-3]
+```python
 def get_max_value(x, y, square):
     max_value = 0
     for i in range(4):
@@ -44,7 +48,9 @@ def get_max_value(x, y, square):
         if not in_range(nx, ny):
             continue
         max_value = max(max_value, square[nx][ny])
-
+```
+#### [코드 1-4]
+```python
 def get_dir_num(x, y, square):
     dir_num = 0
     for i in range(4):
@@ -56,15 +62,18 @@ def get_dir_num(x, y, square):
             dir_num = i
             break
     return dir_num
-
+```
+#### [코드 1-5]
+```python
 def move(x, y, square):
     temp_value = temp_count[x][y]
     temp_count[x][y] = 0
     x = x + dx[get_dir_num(x, y, square)]
     y = y + dy[get_dir_num(x, y, square)]
     temp_count[x][y] += temp_value
-
-
+```
+#### [코드 1-6]
+```python
 rc_list = []
 for _ in range(m):
     r, c = tuple(map(int, input().split()))
@@ -158,10 +167,14 @@ count = [
 #      N  S  W  E
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-
+```
+#### [코드 3-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 3-3]
+```python
 def get_max_value(x, y, square):
     max_value = 0
     for i in range(4):
@@ -171,7 +184,9 @@ def get_max_value(x, y, square):
             continue
         max_value = max(max_value, square[nx][ny])
     return max_value
-
+```
+#### [코드 3-4]
+```python
 def get_dir_num(x, y, square):
     dir_num = 0
     for i in range(4):
@@ -184,7 +199,9 @@ def get_dir_num(x, y, square):
             break
     print(f'(x, y) = ({x}, {y}) / dir_num = {dir_num}')
     return dir_num
-
+```
+#### [코드 3-5]
+```python
 def move(x, y, square):
     temp_value = temp_count[x][y]
     temp_count[x][y] = 0
@@ -192,8 +209,9 @@ def move(x, y, square):
     x = x + dx[dir_num]
     y = y + dy[dir_num]
     temp_count[x][y] += temp_value
-
-
+```
+#### [코드 3-6]
+```python
 rc_list = []
 for _ in range(m):
     r, c = tuple(map(int, input().split()))
@@ -255,10 +273,14 @@ count = [
 #      N  S  W  E
 dxs = [-1, 1, 0, 0]
 dys = [0, 0, -1, 1]
-
+```
+#### [코드 4-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 4-3]
+```python
 def get_next_position(x, y, square):
     max_value = 0
     next_position = (0, 0)
@@ -268,11 +290,15 @@ def get_next_position(x, y, square):
             max_value = square[nx][ny]
             next_position = (nx, ny)
     return next_position
-
+```
+#### [코드 4-4]
+```python
 def move(x, y):
     nx, ny = get_next_position(x, y, square)
     temp_count[nx][ny] += 1
-
+```
+#### [코드 4-5]
+```python
 def move_all(x, y, square):
     for i in range(n):
         for j in range(n):
@@ -284,17 +310,23 @@ def move_all(x, y, square):
     for i in range(n):
         for j in range(n):
             count[i][j] = temp_count[i][j]
-
+```
+#### [코드 4-6]
+```python
 def remove_duplicates():
     for i in range(n):
         for j in range(n):
             if count[i][j] >= 2:
                 count[i][j] = 0
-
+```
+#### [코드 4-7]
+```python
 def simulate(x, y, square):
     move_all(x, y, square)
     remove_duplicates()
-
+```
+#### [코드 4-8]
+```python
 for _ in range(m):
     x, y = tuple(map(int, input().split()))
     x , y = x - 1, y - 1
@@ -314,3 +346,4 @@ print(answer)
 ```plaintext
 3
 ```
+#### --> 다른 테스트 케이스에 대하여도 정답이 정상적으로 출력되었다.
