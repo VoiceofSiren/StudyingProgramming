@@ -105,16 +105,6 @@ dy = [1, 1, 0, -1, -1, -1, 0, 1]
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
 
-def find_current_position(num, square):
-    current_position = (0, 0)
-    for num in range(1, n * n + 1):
-        for i in range(n):
-            for j in range(n):
-                if square[i][j] == num:
-                    current_position = (i, j)
-                    break
-    return current_position
-
 def get_max_value(x, y, square):
     max_value = 0
     for i in range(8):
