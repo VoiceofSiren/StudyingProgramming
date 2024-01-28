@@ -164,3 +164,124 @@ for row in square:
 2 15 6 7 
 14 9 16 10
 ```
+#### --> 이번에도 오답이 출력되었다. Debugging을 위한 print()코드를 추가하여 원인을 분석해보고자 한다.
+<br/>
+
+### < 구현 과정 - 3 >
+- Debugging을 위한 print()코드를 추가하였다.
+#### [코드 3-1]
+```python
+n, m = tuple(map(int, input().split()))
+square = [
+    list(map(int, input().split()))
+    for _ in range(n)
+]
+
+#    EE  SE SS SW WW NW  NN  NE
+dx = [0, 1, 1, 1, 0, -1, -1, -1]
+dy = [1, 1, 0, -1, -1, -1, 0, 1]
+```
+#### [코드 3-2]
+```python
+def in_range(x, y):
+    return 0 <= x < n and 0 <= y < n
+```
+#### [코드 3-3]
+```python
+def get_max_value(x, y, square):
+    max_value = 0
+    for i in range(8):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if not in_range(nx, ny):
+            continue
+        max_value = max(max_value, square[nx][ny])
+    return max_value
+```
+#### [코드 3-4]
+```python
+def get_position_to_change(x, y, square):
+    max_value = get_max_value(x, y, square)
+    position_to_change = (0, 0)
+    for i in range(8):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if not in_range(nx, ny):
+            continue
+        if max_value == square[nx][ny]:
+            position_to_change = (nx, ny)
+            break
+    return position_to_change
+```
+#### [코드 3-5]
+```python
+def change_all(square):
+    for num in range(1, n * n + 1):
+        for i in range(n):
+            for j in range(n):
+                if square[i][j] == num:
+                    # x, y: current_position
+                    x, y = i, j
+                    # p, q: position_to_change
+                    p, q = get_position_to_change(x, y, square)
+                    print('=====================================================')
+                    print(f'num = {num} / (x, y) = ({x}, {y}) / (p, q) = ({p}, {q})')
+                    print('-----------------------------------------------------')
+                    square[p][q], square[x][y] = square[x][y], square[p][q]
+                    for row in square:
+                        for element in row:
+                            print(element, end=' ')
+                        print()
+```
+#### [코드 3-6]
+```python
+for _ in range(m):
+    change_all(square)
+
+for row in square:
+    for element in row:
+        print(element, end=' ')
+    print()
+```
+#### [결과 3]
+```plaintext
+=====================================================
+num = 1 / (x, y) = (0, 2) / (p, q) = (0, 1)
+-----------------------------------------------------
+15 1 13 11 
+4 8 3 5 
+2 12 16 7 
+14 6 9 10 
+=====================================================
+num = 2 / (x, y) = (2, 0) / (p, q) = (3, 0)
+-----------------------------------------------------
+15 1 13 11 
+4 8 3 5 
+14 12 16 7 
+2 6 9 10 
+=====================================================
+num = 2 / (x, y) = (3, 0) / (p, q) = (2, 0)
+-----------------------------------------------------
+15 1 13 11 
+4 8 3 5 
+2 12 16 7 
+14 6 9 10 
+=====================================================
+num = 3 / (x, y) = (1, 2) / (p, q) = (2, 2)
+-----------------------------------------------------
+15 1 13 11 
+4 8 16 5 
+2 12 3 7 
+14 6 9 10 
+=====================================================
+num = 3 / (x, y) = (2, 2) / (p, q) = (1, 2)
+-----------------------------------------------------
+15 1 13 11 
+4 8 3 5 
+2 12 16 7 
+14 6 9 10 
+=================================================...(truncated)
+```
+#### --> num 값은 턴마다 1씩 증가해야 하는데 그렇지 않은 경우가 발생했음을 확인할 수 있다.
+<br/>
+
