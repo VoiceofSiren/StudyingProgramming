@@ -90,7 +90,7 @@ for row in square:
 
 ### < 구현 과정 - 2 >
 - 이번에도 문제를 잘못 이해하였다. 각 턴마다 하나의 숫자를 기준으로 위치를 바꾸는 것인 줄 알았지만, 각 턴마다 모든 칸을 조회해야 하는 것이었다.
-#### [코드 1-1]
+#### [코드 2-1]
 ```python
 n, m = tuple(map(int, input().split()))
 square = [
@@ -101,10 +101,14 @@ square = [
 #    EE  SE SS SW WW NW  NN  NE
 dx = [0, 1, 1, 1, 0, -1, -1, -1]
 dy = [1, 1, 0, -1, -1, -1, 0, 1]
-
+```
+#### [코드 2-2]
+```python
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
-
+```
+#### [코드 2-3]
+```python
 def get_max_value(x, y, square):
     max_value = 0
     for i in range(8):
@@ -114,7 +118,9 @@ def get_max_value(x, y, square):
             continue
         max_value = max(max_value, square[nx][ny])
     return max_value
-
+```
+#### [코드 2-4]
+```python
 def get_position_to_change(x, y, square):
     max_value = get_max_value(x, y, square)
     position_to_change = (0, 0)
@@ -127,16 +133,22 @@ def get_position_to_change(x, y, square):
             position_to_change = (nx, ny)
             break
     return position_to_change
-
+```
+#### [코드 2-5]
+```python
 def change_all(square):
     for num in range(1, n * n + 1):
         for i in range(n):
             for j in range(n):
                 if square[i][j] == num:
+                    # x, y: current_position
                     x, y = i, j
+                    # p, q: position_to_change
                     p, q = get_position_to_change(x, y, square)
                     square[p][q], square[x][y] = square[x][y], square[p][q]
-
+```
+#### [코드 2-6]
+```python
 for _ in range(m):
     change_all(square)
 
