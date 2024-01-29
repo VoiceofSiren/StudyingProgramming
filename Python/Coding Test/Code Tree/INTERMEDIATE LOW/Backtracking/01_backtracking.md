@@ -12,3 +12,57 @@
 
 #### [코드 1-1]
 ```python
+n = int(input())
+arr = []
+visited = [ 0 for _ in range(n)]
+
+def print_arr():
+    for element in arr:
+        print(element + 1, end=' ')
+    print()
+
+def make_permutations(current_num):
+    if current_num == n:
+        print_arr()
+        return
+    
+    for i in range(n):
+        arr.append(i)
+        visited[i] = 1
+        make_permutations(current_num + 1)
+        visited[arr.pop()] = 0
+
+make_permutations(0)
+```
+#### [결과 1]
+```plaintext
+1 1 1 
+1 1 2 
+1 1 3 
+1 2 1 
+1 2 2 
+1 2 3 
+1 3 1 
+1 3 2 
+1 3 3 
+2 1 1 
+2 1 2 
+2 1 3 
+2 2 1 
+2 2 2 
+2 2 3 
+2 3 1 
+2 3 2 
+2 3 3 
+3 1 1 
+3 1 2 
+3 1 3 
+3 2 1 
+3 2 2 
+3 2 3 
+3 3 1 
+3 3 2 
+3 3 3 
+
+```
+#### --> 각 순열에는 중복되는 숫자가 나오면 안 되지만 [결과 1]에서는 중복되는 숫자가 출력되었음을 확인할 수 있다.
