@@ -9,18 +9,23 @@
 <br/>
 
 ### < 구현 과정 - 1 >
-
+- 가능한 모든 순열의 경우를 출력해야 한다.
+- 중복 검사를 위한 visited 리스트를 사용한다.
 #### [코드 1-1]
 ```python
 n = int(input())
 arr = []
 visited = [ 0 for _ in range(n)]
-
+```
+#### [코드 1-2]
+```python
 def print_arr():
     for element in arr:
         print(element + 1, end=' ')
     print()
-
+```
+#### [코드 1-3]
+```python
 def make_permutations(current_num):
     if current_num == n:
         print_arr()
@@ -31,7 +36,9 @@ def make_permutations(current_num):
         visited[i] = 1
         make_permutations(current_num + 1)
         visited[arr.pop()] = 0
-
+```
+#### [코드 1-4]
+```python
 make_permutations(0)
 ```
 #### [결과 1]
@@ -66,3 +73,33 @@ make_permutations(0)
 
 ```
 #### --> 각 순열에는 중복되는 숫자가 나오면 안 되지만 [결과 1]에서는 중복되는 숫자가 출력되었음을 확인할 수 있다.
+<br/>
+
+### < 구현 과정 - 2 >
+- visited 리스트를 사용하여 이미 방문한 숫자에 대해서는 그 아래의 로직을 건너뛰도록 조건문을 수정하였다.
+- [코드 2]는 [코드 1-3]을 수정한 코드이다. 
+#### [코드 2]
+```python
+def make_permutations(current_num):
+    if current_num == n:
+        print_arr()
+        return
+    
+    for i in range(n):
+        if visited[i] == 1:
+            continue
+        arr.append(i)
+        visited[i] = 1
+        make_permutations(current_num + 1)
+        visited[arr.pop()] = 0
+```
+#### [결과 2]
+```plaintext
+1 2 3 
+1 3 2 
+2 1 3 
+2 3 1 
+3 1 2 
+3 2 1
+```
+#### --> 정답이 정상적으로 출력되었음을 확인할 수 있다.
