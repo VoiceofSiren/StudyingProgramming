@@ -7,5 +7,17 @@
 <br/>
 
 ### 1. Arguments & Parameters
-- 
-#### 1) Arguments
+- 일반 함수와 화살표 함수는 arguments와 parameters에서 차이점을 가진다.
+#### 1) 일반함수 - Arguments
+#### [코드 1]
+```javascript
+function main() {
+    console.log(arguments)
+}
+
+main()
+```
+#### [결과 1]
+```plaintext
+Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+```
