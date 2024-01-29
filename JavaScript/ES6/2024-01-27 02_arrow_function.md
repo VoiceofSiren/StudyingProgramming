@@ -9,12 +9,15 @@
 ### 1. Arguments & Parameters
 - 일반 함수와 화살표 함수는 arguments와 parameters에서 차이점을 가진다.
 #### 1) 일반함수 - Arguments
-#### [코드 1]
+- function 키워드를 사용하여 정의한 일반 함수에는 별도로 정의해주지 않아도 arguments라는 변수를 암묵적으로 전달받는다.
+#### [코드 1-1]
 ```javascript
 function main() {
     console.log(arguments)
 }
-
+```
+#### [코드 1-2]
+```javascript
 main()
 ```
 #### [결과 1]
