@@ -1,5 +1,5 @@
 # Backtracking
-###### Question: https://www.codetree.ai/missions/2/problems/beautiful-number?&utm_source=clipboard&utm_medium=text
+###### Question: https://www.codetree.ai/missions/2/problems/yutnori-1d?&utm_source=clipboard&utm_medium=text
 ###### Difficulty: Easy
 <br/>
 
