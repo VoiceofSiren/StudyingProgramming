@@ -23,7 +23,7 @@ let e4 = numArr[3];
 ```
 <br/>
 
-#### 2. Destructuring Assignment
+### 3. Destructuring Assignment
 - [코드 1]에서는 n개의 변수에 값을 할당하기 위해 n줄의 변수 초기화문을 사용해야 했지만, Destructuring Assignment를 사용하면 [코드 2]에서처럼 한 줄로 할당할 수 있다.
 #### [코드 2-1]
 ```javascript
