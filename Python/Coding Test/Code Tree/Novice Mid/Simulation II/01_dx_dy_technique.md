@@ -1,5 +1,5 @@
 # dx dy Technique
-###### Question: [https://www.codetree.ai/missions/5/problems/come-back/description](https://www.codetree.ai/missions/5/problems/come-back?&utm_source=clipboard&utm_medium=text)
+###### Question: https://www.codetree.ai/missions/5/problems/come-back/description
 ###### Difficulty: Easy
 <br/>
 
