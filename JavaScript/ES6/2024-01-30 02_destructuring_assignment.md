@@ -15,17 +15,17 @@
 - 이 때문에 반복문을 사용하거나 [코드 1]에서처럼 여러 줄의 코드를 작성해야만 했다.
 #### [코드 1]
 ```javascript
-        let operators = {
-            "add": "+",
-            "subtract": "-",
-            "multiply": "*",
-            "divide": "/"
-        }
+let operators = {
+    "add": "+",
+    "subtract": "-",
+    "multiply": "*",
+    "divide": "/"
+}
 
-        let add = operators['add'];
-        let subtract = operators.subtract;
-        let multiply = operators.multiply;
-        let divide = operators['divide'];
+let add = operators['add'];
+let subtract = operators.subtract;
+let multiply = operators.multiply;
+let divide = operators['divide'];
 ```
 <br/>
 
@@ -46,9 +46,19 @@ let {add, subtract, multiply, divide} = operators;
 #### [코드 2-2]
 ```javascript
 let {add, subtract} = operators;
-console.log(`add = ${add}, subtract = ${subtract}`)
+console.log(`add = ${add}, subtract = ${subtract}`);
 ```
-#### [결과 1]
+#### [결과 1-1]
 ```plaintext
 add = +, subtract = -
+```
+- 객체의 key의 이름을 변경하여 변수로 할당하고 싶은 경우 [코드 2-3]처럼 작성하면 된다.
+#### [코드 2-3]
+```javascript
+let {add: sum, subtract: cut_out} = operators;
+console.log(`sum = ${sum}, cut_out = ${cut_out}`);
+```
+#### [결과 1-2]
+```plaintext
+sum = +, cut_out = -
 ```
