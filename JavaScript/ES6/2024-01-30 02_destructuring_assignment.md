@@ -27,9 +27,11 @@
         let multiply = operators.multiply;
         let divide = operators['divide'];
 ```
-### 3. 
-- 
-#### [코드 2]
+<br/>
+
+### 3. Destructuring Assignment (객체)
+- [코드 1]에서는 n개의 변수에 값을 할당하기 위해 n줄의 변수 초기화문을 사용해야 했지만, Destructuring Assignment를 사용하면 [코드 2]에서처럼 한 줄로 할당할 수 있다.
+#### [코드 2-1]
 ```javascript
 let operators = {
     "add": "+",
@@ -38,11 +40,15 @@ let operators = {
     "divide": "/"
 }
 
-let {add} = operators;
-let {subtract, divide} = operators;
+let {add, subtract, multiply, divide} = operators;
+```
+- 객체의 key 중 일부만 변수로 할당하고 싶을 경우 [코드 2-2]처럼 작성하면 된다.
+#### [코드 2-2]
+```javascript
+let {add, subtract} = operators;
 console.log(`add = ${add}, subtract = ${subtract}`)
 ```
-#### [결과 2]
+#### [결과 1]
 ```plaintext
 add = +, subtract = -
 ```
