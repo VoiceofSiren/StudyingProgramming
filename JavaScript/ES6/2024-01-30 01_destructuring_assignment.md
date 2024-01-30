@@ -43,6 +43,7 @@ let [e1, e2, e3, e4] = numArr;
 n1 = 100, n3 = 300
 ```
 - Destructuring Assginment에 Spread Operators를 적용하는 것도 가능하다.
+- [코드 3]은 numArr 배열의 모든 요소를 그대로 할당받는 방식이다.
 #### [코드 3]
 ```javascript
 let numArr = [100, 200, 300, 400];
@@ -52,4 +53,15 @@ console.log(newArr);
 #### [결과 2]
 ```plaintext
 [100, 200, 300, 400]
+```
+- [코드 4]는 numArr의 앞부분에 있는 연속한 요소들을 별도의 변수로 먼저 할당시키고 나머지 요소를 Spread Operators를 사용해서 할당시키는 방식이다.
+#### [코드 4]
+```javascript
+let numArr = [100, 200, 300, 400];
+let [x, y, ...newArr] = numArr;
+console.log(`x = ${x}, y = ${y}, newArr = ${newArr}`);
+```
+#### [결과 3]
+```plaintext
+x = 100, y = 200, newArr = 300,400
 ```
