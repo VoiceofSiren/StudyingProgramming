@@ -1,7 +1,7 @@
 # Spread Operators
 <br/>
 
-### Spread Operators
+### Spread Operators (변수 전개 구문)
     - Iterable elements (반복 가능한 요소)들에 적용할 수 있는 문법.
     - 배열이나 문자열 등에 ...을 붙여 사용된다.
 <br/>
