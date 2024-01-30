@@ -15,3 +15,34 @@
 - 이 때문에 반복문을 사용하거나 [코드 1]에서처럼 여러 줄의 코드를 작성해야만 했다.
 #### [코드 1]
 ```javascript
+        let operators = {
+            "add": "+",
+            "subtract": "-",
+            "multiply": "*",
+            "divide": "/"
+        }
+
+        let add = operators['add'];
+        let subtract = operators.subtract;
+        let multiply = operators.multiply;
+        let divide = operators['divide'];
+```
+### 3. 
+- 
+#### [코드 2]
+```javascript
+let operators = {
+    "add": "+",
+    "subtract": "-",
+    "multiply": "*",
+    "divide": "/"
+}
+
+let {add} = operators;
+let {subtract, divide} = operators;
+console.log(`add = ${add}, subtract = ${subtract}`)
+```
+#### [결과 2]
+```plaintext
+add = +, subtract = -
+```
