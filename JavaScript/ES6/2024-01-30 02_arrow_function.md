@@ -44,6 +44,7 @@ ABC
 <br/>
 
 #### 2) 화살표 함수 - arguments
+- 일반 함수와는 달리, 화살표 함수는 arguments라는 변수를 암묵적으로 전달받지 않는다.
 #### [코드 2-1]
 ```javascript
 const main = () => {
@@ -54,7 +55,22 @@ const main = () => {
 ```javascript
 main('12345', 'ABC');
 ```
-#### [결과 2]
+#### [결과 2-1]
 ```plaintext
 Uncaught ReferenceError: arguments is not defined
+```
+- 그렇다고 해서 화살표 함수가 가변 인자를 전달 받지 못하는 것은 아니다.
+#### [코드 2-1]
+```javascript
+const main = (...params) => {
+    console.log(params)
+}
+```
+#### [코드 2-2]
+```javascript
+main('12345', 'ABC');
+```
+#### [결과 2]
+```plaintext
+['12345', 'ABC']
 ```
