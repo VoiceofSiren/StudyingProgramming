@@ -5,9 +5,11 @@
     - ES6부터 도입된 Destructuring Assignment (구조 분해 할당)에 대해 알아보고자 한다.
 <br/>
 
-### Destructuring Assignment
+### 1. Destructuring Assignment
 - 객체나 배열의 속성을 쉽게 추출하여 변수에 할당할 수 있게 해주는 기능.
-#### 1) 기존의 문법
+<br/>
+
+### 2. 기존의 문법
 - 객체나 배열의 속성을 개별적으로 변수에 할당해야 했다.
 - 이 때문에 반복문을 사용하거나 [코드 1]에서처럼 여러 줄의 코드를 작성해야만 했다.
 #### [코드 1]
@@ -19,16 +21,18 @@ let e2 = numArr[1];
 let e3 = numArr[2];
 let e4 = numArr[3];
 ```
-#### 2) Destructuring Assignment
+<br/>
+
+#### 2. Destructuring Assignment
 - [코드 1]에서는 n개의 변수에 값을 할당하기 위해 n줄의 변수 초기화문을 사용해야 했지만, Destructuring Assignment를 사용하면 [코드 2]에서처럼 한 줄로 할당할 수 있다.
-#### [코드 2]
+#### [코드 2-1]
 ```javascript
 let numArr = [100, 200, 300, 400];
 
 let [e1, e2, e3, e4] = numArr;
 ```
 - 배열의 일부 요소만 할당하고 싶을 경우, [코드 3]에서처럼 할당하고 싶은 값에 해당하는 인덱스에만 변수를 할당해주면 된다.
-#### [코드 3]
+#### [코드 2-2]
 ```javascript
     let numArr = [100, 200, 300, 400];
     let [n1, , n3, ] = numArr;
@@ -37,4 +41,15 @@ let [e1, e2, e3, e4] = numArr;
 #### [결과 1]
 ```plaintext
 n1 = 100, n3 = 300
+```
+- Destructuring Assginment에 Spread Operators를 적용하는 것도 가능하다.
+#### [코드 3]
+```javascript
+let numArr = [100, 200, 300, 400];
+let [...newArr] = numArr;
+console.log(newArr);
+```
+#### [결과 2]
+```plaintext
+[100, 200, 300, 400]
 ```
