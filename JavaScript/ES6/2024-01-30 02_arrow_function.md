@@ -60,18 +60,18 @@ main('12345', 'ABC');
 Uncaught ReferenceError: arguments is not defined
 ```
 - 그렇다고 해서 화살표 함수가 가변 인자를 전달 받지 못하는 것은 아니다.
-#### [코드 2-1]
+#### [코드 2-3]
 ```javascript
 const main = (...params) => {
     console.log(params)
 }
 ```
-#### [코드 2-2]
+#### [코드 2-4]
 ```javascript
 main('12345', 'ABC');
 ```
-#### [결과 2]
+#### [결과 2-2]
 ```plaintext
 ['12345', 'ABC']
 ```
-#### --> Spread Operators를 사용하여 가변 인자를 지정할 수 있고 해당 가변 인자에서 params[0], params[1]처럼 인덱싱도 가능하다.
+#### --> Spread Operators를 사용하여 가변 인자를 지정할 수 있고 해당 가변 인자에서 params[0], params[1]처럼 인덱싱하는 것것도 가능하다.
