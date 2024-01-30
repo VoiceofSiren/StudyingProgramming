@@ -35,15 +35,14 @@ console.log(sum(100, ...numArr));
 #### 이 경우 Spread Operator를 사용한 파라미터는 반드시 마지막에 위치해 있어야 한다.
 #### [코드 2-1]
 ```javascript
-function sumFunc(obj, ...arr) {
+function combineFunc(obj, ...arr) {
     return [obj, ...arr];
 }
 ```
 #### [코드 2-2]
 ```javascript
-
-console.log(sumFunc({"one": 1, "two": 2}, 3, 4));
-console.log(sumFunc({"one": 1, "two": 2}, 3, 4, 5, 6));
+console.log(combineFunc({"one": 1, "two": 2}, 3, 4));
+console.log(combineFunc({"one": 1, "two": 2}, 3, 4, 5, 6));
 ```
 #### [결과 2]
 ```plaintext
