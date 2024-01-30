@@ -12,12 +12,18 @@
 - 이 때문에 반복문을 사용하거나 [코드 1]에서처럼 여러 줄의 코드를 작성해야만 했다.
 #### [코드 1]
 ```javascript
-        let numArr = [100, 200, 300, 400];
+let numArr = [100, 200, 300, 400];
 
-        let e1 = numArr[0];
-        let e2 = numArr[1];
-        let e3 = numArr[2];
-        let e4 = numArr[3];
+let e1 = numArr[0];
+let e2 = numArr[1];
+let e3 = numArr[2];
+let e4 = numArr[3];
 ```
 #### 2) Destructuring Assignment
+- [코드 1]에서는 n개의 변수에 값을 할당하기 위해 n줄의 변수 초기화문을 사용해야 했지만, Destructuring Assignment를 사용하면 [코드 2]에서처럼 한 줄로 할당할 수 있다.
+#### [코드 2]
+```javascript
+let numArr = [100, 200, 300, 400];
 
+let [e1, e2, e3, e4] = numArr;
+```
