@@ -3,11 +3,11 @@
 
 ### 이 글의 목적
     - Arrow Function (화살표 함수)에 대하여 알아보고자 한다.
-    - 이번 글에서는 화살표 함수의 문법뿐만 아니라 더 자세한 내용을 다루고자 한다.
+    - 이번 글에서는 화살표 함수의 문법뿐만 아니라 arguments 및 parameters (가변 인자)에 대해 알아보고자 한다.
 <br/>
 
-### 1. arguments & Parameters
-- 일반 함수와 화살표 함수는 arguments와 parameters에서 차이점을 가진다.
+### arguments & Parameters
+- 일반 함수와 화살표 함수는 arguments와 가변 인자에서 차이점을 가진다.
 #### 1) 일반함수 - arguments
 - function 키워드를 사용하여 정의한 일반 함수에는 별도로 정의해주지 않아도 arguments라는 변수를 암묵적으로 전달받는다.
 #### [코드 1-1]
@@ -74,3 +74,4 @@ main('12345', 'ABC');
 ```plaintext
 ['12345', 'ABC']
 ```
+#### --> Spread Operators를 사용하여 가변 인자를 지정할 수 있고 해당 가변 인자에서 params[0], params[1]처럼 인덱싱도 가능하다.
