@@ -28,8 +28,46 @@
 ```plaintext
 
 ```
+#### --> 위와 같은 요인에 따라 필자는 인접 리스트를 사용한 DFS 기법을 통해 구현할 것이다.
 
 ### < 구현 과정 - 1 >
 - 인접 행렬과 
 #### [코드 1-1]
 ```python
+n, m = tuple(map(int, input().split()))
+
+graph = [
+    [] for _ in range (n + 1)
+]
+
+visited = [
+    False for _ in range(n + 1)
+]
+
+
+for i in range(m):
+    start, end = tuple(map(int, input().split()))
+    graph[start].append(end)
+    graph[end].append(start)
+
+vertex_count = 0
+
+def dfs(current_vertex):
+    global vertex_count
+
+    for adjacent_vertex in graph[current_vertex]:
+
+        if not visited[adjacent_vertex]:
+            visited[adjacent_vertex] = True
+            vertex_count += 1
+            dfs(adjacent_vertex)
+
+visited[1] = True
+dfs(1)
+
+print(vertex_count)
+```
+#### [결과 1]
+```plaintext
+2
+```
