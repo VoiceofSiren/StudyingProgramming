@@ -14,10 +14,14 @@
 ```plaintext
 - 인접 리스트를 adjacent_list, Vertex의 총 개수를 n이라고 할 때,
   인접 리스트의 초기 상태를 adjacent_list = [ [ 0 for _in range(n) ] for _ in range(n) ] 로 정의할 수 있다.
+```
+```plaintext
 - v1번째 vertex를 vtx_1, v2번째 vertex를 vtx_2라고 할 때
   vtx_1과 vtx_2가 서로 연결되어 있으면 adjacent_list[v1][v2] = 1,
   vtx_1과 vtx_2가 서로 연결되어 있지 않으면 adjacent_list[v1][v2] = 0 과 같은 방식으로 값을 부여할 수 있고,
   이는 매우 가시성이 좋은 편이다.
+```
+```plaintext
 - 다만, 시간 복잡도가 O(N^2)이기 때문에 Vertex의 개수가 점점 늘어날수록 성능은 기하급수적으로 악화된다. 
 ```
 #### 2) 인접 리스트
