@@ -1,9 +1,11 @@
 # Relationship
+<br/>
 
 ### 이 글의 목적
 ```plaintext
 - JPA의 Relationship Mapping (연관관계 매핑)에 대해 알아보고자 한다.
 ```
+<br/>
 
 ### 1. 연관관계 매핑
 - DBMS와 JAVA에서 데이터를 묶는 방식의 차이점에 대해 알아보자.
@@ -20,4 +22,8 @@
 #### --> 이와 같은 차이점을 해결해주는 JPA의 매핑에 대해 알아보자.
 <br/>
 
-### 1. 단방향 연관관계 (Unidirectional Relationship)
+### 2. 단방향 연관관계 (Unidirectional Relationship)
+#### [그림 1-1] - 테이블 연관관계
+![IMAGE](../images/tableRelationship001.png)
+#### [그림 1-2] - 객체 연관관계
+![IMAGE](../images/tableRelationship002.png)
