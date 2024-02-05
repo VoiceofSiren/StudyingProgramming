@@ -32,7 +32,7 @@
 - MEMBER 테이블에 있는 외래키 TEAM_ID를 통해 JOIN 연산자로 데이터를 가져올 수 있다.
 - 해당 JOIN 연산자를 사용한 SQL문은 [코드 1]과 같다.
 #### [코드 1]
-```plaintext
+```sql
 SELECT *
     FROM Member m
     LEFT JOIN Team t ON m.teamId = t.id;
