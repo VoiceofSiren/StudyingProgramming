@@ -50,7 +50,8 @@ public class Team {
 }
 ```
 ### 2) 1:N - @OneToMany
-- N:1 연관관계과 반대되는 개념으로서, 
+- N:1 연관관계과 반대되는 개념이다.
+- 연관관계의 주인 쪽에 @JoinColumn으로 JOIN하고자 하는 외래키의 이름을 지정해주지 않으면 두 테이블을 JOIN한 결과인TEAM_MEMBER라는 중간 테이블이 자동으로 생성되어 성능의 저하를 유발할 수 있으니 이 점에 유의해야 한다.
 #### [그림 2]
 ![IMAGE](../../../images/tableRelationship0006.png)
 #### [코드 2-1]
