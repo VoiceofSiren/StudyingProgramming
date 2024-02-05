@@ -37,7 +37,7 @@ SELECT *
     LEFT JOIN TEAM t ON m.TEAM_ID = t.TEAM_ID;
 ```
 #### [그림 1-2] - 객체 단방향 연관관계
-![IMAGE](../../../images/tableRelationship0002.png)
+![IMAGE](../../../images/tableRelationship0005.png)
 - Member 클래스 내부에 Team 타입의 필드를 추가한다.
 - 이 경우 Member에서 Team을 참조할 수는 있지만, 역방향으로의 참조는 불가하다.
 #### [코드 2-1]
@@ -77,7 +77,7 @@ public class Member {
 ### 3. 양방향 연관관계 (Bidirectional Relationship)
 - Team 클래스에서 Member로 참조하고 싶은 경우, Member 객체를 담을 수 있는 List타입의 변수를 만들어주면 된다.
 #### [그림 2] - 객체 양방향 연관관계
-![IMAGE](../../../images/tableRelationship0003.png)
+![IMAGE](../../../images/tableRelationship0004.png)
 #### [코드 3]
 ```java
 @Entity
