@@ -45,6 +45,7 @@ public class JpaMain {
 
 ### 2. Persistence Context (영속성 컨텍스트) 
 - 엔티티 객체를 메모리에 보관하고 관리하는 저장소이다.
+- EntityManager 객체를 통해 영속성 컨텍스트에 접근한다.
 - 영속성 컨텍스트가 제공하는 기능들은 다음과 같다.
 #### [기능 1] - 엔티티 객체 캐싱
 ```plaintext
@@ -79,7 +80,7 @@ public class JpaMain {
 <br/>
 
 ### 3. Life Cycle of Entity (엔티티의 생명 주기)
-- 
+- 엔티티는 다음과 같은 네 가지 상태 중 하나를 가진다.
 #### 1) 비영속 (New / Transient)
 ```plaintext
 - 새로 만들어진 객체의 상태.
