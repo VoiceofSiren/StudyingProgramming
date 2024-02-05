@@ -12,9 +12,44 @@
 - 연관관계의 다중성은 총 4종류로 분류할 수 있다.
 - 1:1, 1:N, N:1, N:M
 ### 1) N:1 - @ManyToOne
+#### [코드 1]
+```java
+@Entity
+@Getter
+@Setter
+public class Member {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "member_id")
+    private Long id;
+
+    private String memberName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id")
+    private Team team;
+}
+```
 ### 2) 1:N - @OneToMany
+#### [코드 2]
+```java
+@Entity
+@Getter
+@Setter
+public class Team {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "team_id")
+    private Long id;
+
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
+
+    private String teamName;
+}
+```
 ### 3) 1:1 - @OneToOne
 
 ### 4) N:M - @ManyToMany
