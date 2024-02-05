@@ -33,8 +33,8 @@
 #### [코드 1]
 ```sql
 SELECT *
-    FROM Member m
-    LEFT JOIN Team t ON m.teamId = t.id;
+    FROM MEMBER m
+    LEFT JOIN TEAM t ON m.TEAM_ID = t.TEAM_ID;
 ```
 #### [그림 1-2] - 객체 단방향 연관관계
 ![IMAGE](../../../images/tableRelationship0002.png)
