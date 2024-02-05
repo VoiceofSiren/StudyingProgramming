@@ -16,7 +16,7 @@
 - [그림 1]에 따르면, 연관관계의 주인은 MEMBER이다.
 #### 1) 주인인 객체 (Owner side)
 #### [그림 1]
-![IMAGE](../../../tableRelationship0001.png)
+![IMAGE](../../../images/tableRelationship0001.png)
 #### [코드 1-1]
 ```java
 @Entity
