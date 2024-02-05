@@ -35,7 +35,7 @@ SELECT *
     FROM Member m
     LEFT JOIN Team t ON m.teamId = t.id;
 ```
-#### [그림 1-2] - 객체 연관관계
+#### [그림 1-2] - 객체 단방향 연관관계
 ![IMAGE](../../../images/tableRelationship0002.png)
 - Member 클래스 내부에 Team 타입의 필드를 추가한다.
 - 이 경우 Member에서 Team을 참조할 수는 있지만, 역방향으로의 참조는 불가하다.
@@ -44,13 +44,14 @@ SELECT *
 @Entity
 @Getter
 @Setter
-public class Member {
+public class Team {
 
     @Id
     @GeneratedValue
     @Column(name = "team_id")
-    private Long Id;
+    private Long id;
 
+    
     private String teamName;
 }
 ```
@@ -64,12 +65,36 @@ public class Member {
     @Id
     @GeneratedValue
     @Column(name = "member_id")
-    private Long Id;
+    private Long id;
 
     private String memberName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;
+}
+```
+<br/>
+
+### 3. 양방향 연관관계 (Bidirectional Relationship)
+- Team 클래스에서 Member로 참조하고 싶은 경우, Member 객체를 담을 수 있는 List타입의 변수를 만들어주면 된다.
+#### [그림 2] - 객체 양방향 연관관계
+![IMAGE](../../../images/tableRelationship0003.png)
+#### [코드 3]
+```java
+@Entity
+@Getter
+@Setter
+public class Team {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "team_id")
+    private Long id;
+
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
+
+    private String teamName;
 }
 ```
