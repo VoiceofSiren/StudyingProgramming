@@ -11,3 +11,10 @@
 ### 1. 연관관계의 다중성 (Multiplicity)
 - 연관관계의 다중성은 총 4종류로 분류할 수 있다.
 - 1:1, 1:N, N:1, N:M
+### 1) N:1 - @ManyToOne
+
+### 2) 1:N - @OneToMany
+
+### 3) 1:1 - @OneToOne
+
+### 4) N:M - @ManyToMany
