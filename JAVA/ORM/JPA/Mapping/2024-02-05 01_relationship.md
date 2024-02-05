@@ -24,6 +24,6 @@
 
 ### 2. 단방향 연관관계 (Unidirectional Relationship)
 #### [그림 1-1] - 테이블 연관관계
-![IMAGE](../images/tableRelationship001.png)
+![IMAGE](../../../images/tableRelationship001.png)
 #### [그림 1-2] - 객체 연관관계
-![IMAGE](../images/tableRelationship002.png)
+![IMAGE](../../../images/tableRelationship002.png)
