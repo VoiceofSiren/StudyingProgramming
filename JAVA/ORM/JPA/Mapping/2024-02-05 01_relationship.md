@@ -24,7 +24,7 @@
 <br/>
 
 ### 2. 단방향 연관관계 (Unidirectional Relationship)
-- TEAM 테이블과 MEMBER 테이블이 있고 TEAM 테이블을 가리키는 외래키 TEAM_ID가 MEMBER 테이블에 있다고 가정할 때의 간단한 연관관계 예시를 [그림 1-1]과 [그림 1-2]로 그려보았다.
+- TEAM 테이블과 MEMBER 테이블이 있고 TEAM 테이블의 TEAM_ID를 가리키는 외래키 TEAM_ID가 MEMBER 테이블에 있다고 가정할 때의 간단한 연관관계 예시를 [그림 1-1]과 [그림 1-2]로 그려보았다.
 #### 1) 테이블 연관관계
 #### [그림 1-1] - 테이블 연관관계
 ![IMAGE](../../../images/tableRelationship0001.png)
@@ -51,7 +51,6 @@ public class Team {
     @GeneratedValue
     @Column(name = "team_id")
     private Long id;
-
     
     private String teamName;
 }
@@ -70,8 +69,6 @@ public class Member {
 
     private String memberName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
     private Team team;
 }
 ```
@@ -93,9 +90,8 @@ public class Team {
     @Column(name = "team_id")
     private Long id;
 
-    @OneToMany(mappedBy = "team")
-    private List<Member> members = new ArrayList<>();
-
     private String teamName;
+
+    private List<Member> members = new ArrayList<>();
 }
 ```
