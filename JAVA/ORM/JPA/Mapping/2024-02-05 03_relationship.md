@@ -12,6 +12,8 @@
 - 연관관계의 다중성은 총 4종류로 분류할 수 있다.
 - 1:1, 1:N, N:1, N:M
 ### 1) N:1 - @ManyToOne
+#### [그림 1]
+![IMAGE](../../../images/tableRelationship0005.png)
 #### [코드 1]
 ```java
 @Entity
@@ -32,6 +34,8 @@ public class Member {
 }
 ```
 ### 2) 1:N - @OneToMany
+#### [그림 2]
+![IMAGE](../../../images/tableRelationship0006.png)
 #### [코드 2]
 ```java
 @Entity
