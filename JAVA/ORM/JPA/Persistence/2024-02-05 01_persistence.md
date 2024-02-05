@@ -38,6 +38,6 @@ public class JpaMain {
 
         emf.close();
     }
-  }
+}
 ```
 
