@@ -27,7 +27,7 @@
 - TEAM 테이블과 MEMBER 테이블이 있고 TEAM 테이블의 TEAM_ID를 가리키는 외래키 TEAM_ID가 MEMBER 테이블에 있다고 가정할 때의 간단한 연관관계 예시를 [그림 1-1]과 [그림 1-2]로 그려보았다.
 #### 1) 테이블 연관관계
 #### [그림 1-1] - 테이블 연관관계
-![IMAGE](../../../images/tableRelationship0001.png)
+![IMAGE](../../../images/tableRelationship0007.png)
 - MEMBER 테이블에 있는 외래키 TEAM_ID를 통해 JOIN 연산자로 데이터를 가져올 수 있다.
 - 해당 JOIN 연산자를 사용한 SQL문은 [코드 1]과 같다.
 #### [코드 1]
