@@ -180,4 +180,6 @@ public class Phone {
 <br/>
 
 ### 4) N:M - @ManyToMany
-- 
+- N:M 매핑을 위한 @ManyToMany가 JPA 공식 스펙에는 존재하지만, 복잡한 SQL문을 생성하고 운영을 어렵게 하기 때문에 실무에서의 사용을 권하지 않는다고 한다.
+- 따라서, 두 테이블을 JOIN하는 테이블을 만들어서 각각에 대하여 @OneToMany와 @ManyToOne을 사용하는 방식으로 매핑하는 것이 바람직할 것이다.
+
