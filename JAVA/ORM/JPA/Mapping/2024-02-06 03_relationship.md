@@ -185,10 +185,10 @@ public class Phone {
 ### 1) @ManyToMany를 그대로 사용하는 방식 - 단방향
 - 회원 테이블이 상품 테이블에 대한 외래키를 가지고 있다고 가정할 때의 테이블 연관관계를 다이어그램으로 나타내면 [그림 4-1]과 같다.
 #### [그림 4-1]
-![IMAGE](../../../images/tableRelationship0017.png)
+![IMAGE](../../../images/tableRelationship0019.png)
 - 객체 연관관계를 다이어그램으로 나타내면 [그림 4-2]와 같다.
 #### [그림 4-2]
-![IMAGE](../../../images/tableRelationship0018.png)
+![IMAGE](../../../images/tableRelationship0020.png)
 #### [코드 4-1]
 ```java
 @Entity
@@ -234,12 +234,9 @@ public class Product {
 }
 ```
 ### 2) @ManyToMany를 그대로 사용하는 방식 - 양방향
-- 회원 테이블과 상품 테이블 모두 상대 테이블에 대한 외래키를 가지고 있다고 가정할 때의 테이블 연관관계를 다이어그램으로 나타내면 [그림 5-1]과 같다.
-#### [그림 5-1]
-![IMAGE](../../../images/tableRelationship0019.png)
-- 객체 연관관계를 다이어그램으로 나타내면 [그림 5-2]와 같다.
-#### [그림 5-2]
-![IMAGE](../../../images/tableRelationship0020.png)
+- 객체 연관관계를 다이어그램으로 나타내면 [그림 5-1]와 같다.
+#### [그림 4-2]
+![IMAGE](../../../images/tableRelationship0021.png)
 #### [코드 5-1]
 ```java
 @Entity
