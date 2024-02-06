@@ -101,7 +101,7 @@ public class Team {
 ![IMAGE](../../../images/tableRelationship0011.png)
 - 객체 연관관계를 다이어그램으로 나타내면 [그림 3-2]와 같다.
 #### [그림 3-2]
-![IMAGE](../../../images/tableRelationship0012.png)
+![IMAGE](../../../images/tableRelationship0015.png)
 #### [코드 3-1]
 ```java
 @Entity
@@ -142,7 +142,7 @@ public class Phone {
 ![IMAGE](../../../images/tableRelationship0013.png)
 - 객체 연관관계를 다이어그램으로 나타내면 [그림 3-4]와 같다.
 #### [그림 3-4]
-![IMAGE](../../../images/tableRelationship0014.png)
+![IMAGE](../../../images/tableRelationship0016.png)
 #### [코드 3-3]
 ```java
 @Entity
