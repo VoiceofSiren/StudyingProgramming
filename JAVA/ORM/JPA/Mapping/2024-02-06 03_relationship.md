@@ -89,5 +89,86 @@ public class Team {
 }
 ```
 ### 3) 1:1 - @OneToOne
+- 모든 회원은 반드시 한 개의 휴대폰을 가지고 있다는 비즈니스 로직이 있다고 가정하자.
+- 회원 테이블이 휴대폰 테이블에 대한 외래키를 가지고 있다고 가정할 때의 테이블 연관관계를 다이어그램으로 나타내면 [그림 3-1]과 같다.
+#### [그림 3-1]
+![IMAGE](../../../images/tableRelationship0011.png)
+- 객체 연관관계를 다이어그램으로 나타내면 [그림 3-2]와 같다.
+#### [그림 3-2]
+![IMAGE](../../../images/tableRelationship0012.png)
+#### [코드 3-1]
+```java
+@Entity
+@Getter
+@Setter
+public class Member {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "member_id")
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "phone_id")
+    private Phone phone;
+
+    private String memberName;
+}
+```
+#### [코드 3-2]
+```java
+@Entity
+@Getter
+@Setter
+public class Phone {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "phone_id")
+    private Long id;
+
+    private String phoneNumber;
+}
+```
+- 1:1의 연관관계의 경우에는 외래키를 상대 테이블에 지정하는 것도 가능하다.
+- 휴대폰 테이블이 회원 테이블 대한 외래키를 가지고 있다고 가정할 때의 테이블 연관관계를 다이어그램으로 나타내면 [그림 3-3]과 같다.
+#### [그림 3-3]
+![IMAGE](../../../images/tableRelationship0013.png)
+- 객체 연관관계를 다이어그램으로 나타내면 [그림 3-4]와 같다.
+#### [그림 3-4]
+![IMAGE](../../../images/tableRelationship0014.png)
+#### [코드 3-1]
+```java
+@Entity
+@Getter
+@Setter
+public class Member {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "member_id")
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "phone_id")
+    private Phone phone;
+
+    private String memberName;
+}
+```
+#### [코드 3-2]
+```java
+@Entity
+@Getter
+@Setter
+public class Phone {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "phone_id")
+    private Long id;
+
+    private String phoneNumber;
+}
+```
 ### 4) N:M - @ManyToMany
