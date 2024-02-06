@@ -11,6 +11,8 @@
 ### 1. 연관관계의 다중성 (Multiplicity)
 - 연관관계의 다중성은 총 4종류로 분류할 수 있다.
 - 1:1, 1:N, N:1, N:M
+<br/>
+
 ### 1) N:1 - @ManyToOne
 - 가장 많이 사용되는 연관관계이다.
 #### [그림 1]
@@ -49,6 +51,8 @@ public class Team {
     private String teamName;
 }
 ```
+<br/>
+
 ### 2) 1:N - @OneToMany
 - N:1 연관관계과 반대되는 개념이다.
 - 연관관계의 주인 쪽에 @JoinColumn으로 JOIN하고자 하는 외래키의 이름을 지정해주지 않으면 <br/> 두 테이블을 JOIN한 결과인TEAM_MEMBER라는 중간 테이블이 자동으로 생성되어 <br/> 운영의 어려움과 성능의 저하를 유발할 수 있으니 이 점에 유의해야 한다.
@@ -88,6 +92,8 @@ public class Team {
     private String teamName;
 }
 ```
+<br/>
+
 ### 3) 1:1 - @OneToOne
 - 모든 회원은 반드시 한 개의 휴대폰을 가지고 있다는 비즈니스 로직이 있다고 가정하자.
 - 회원 테이블이 휴대폰 테이블에 대한 외래키를 가지고 있다고 가정할 때의 테이블 연관관계를 다이어그램으로 나타내면 [그림 3-1]과 같다.
@@ -171,4 +177,7 @@ public class Phone {
     private String phoneNumber;
 }
 ```
+<br/>
+
 ### 4) N:M - @ManyToMany
+- 
