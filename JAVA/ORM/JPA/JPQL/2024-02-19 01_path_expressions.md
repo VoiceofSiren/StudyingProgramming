@@ -20,6 +20,7 @@ SELECT m.username        // 상태 필드
 
 ### 2. State Field (상태 필드)
 - 단순히 값을 저장하기 위한 필드.
+- 경로 탐색의 끝으로서, 더 이상 경로 탐색이 불가하다.
     - 예: m.username
 <br/>
 
@@ -28,6 +29,7 @@ SELECT m.username        // 상태 필드
 - 단일 값 연관 필드와 컬렉션 값 연관 필드가 있다.
 #### 1) Single-valued Association Path (단일 값 연관 필드)
 - 연관 관계의 대상이 Entity인 필드.
+- 묵시적 INNER JOIN이 발생하며, 경로 탐색 가능하다.
     - 예: m.team
 ```java
 @ManyToOne
@@ -35,6 +37,8 @@ SELECT m.username        // 상태 필드
 ```
 #### 2) Collection-valued Association Path (컬렉션 값 연관 필드)
 - 연관 관계의 대상이 Collection인 필드.
+- 묵시적 INNER JOIN이 발생하며, 더 이상 경로 탐색이 불가하다.
+- 단, FROM 절에서 명시적 JOIN을 통해 별칭을 얻으면 별칭을 통해 탐색할 수 있다.
     - 예: m.orders
 ```java
 @OneToMany
