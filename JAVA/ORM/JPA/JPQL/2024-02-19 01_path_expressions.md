@@ -27,7 +27,7 @@ SELECT m.username        // 상태 필드
 ### 3. Association Field (연관 필드)
 - 연관 관계를 위한 필드.
 - 단일 값 연관 필드와 컬렉션 값 연관 필드가 있다.
-#### 1) Single-valued Association Path (단일 값 연관 필드)
+#### 1) Single-valued Association Path (단일 값 연관 경로)
 - 연관 관계의 대상이 Entity인 필드.
 - 묵시적 INNER JOIN이 발생하며, 경로 탐색 가능하다.
     - 예: m.team
@@ -55,7 +55,7 @@ Hibernate:
                 on t1_0.team_id=m1_0.team_id
 ```
 #### --> 별도의 JPQL에 JOIN 문을 입력하지 않아도 묵시적으로 JOIN 문이 실행되는 것을 확인할 수 있다.
-#### 2) Collection-valued Association Path (컬렉션 값 연관 필드)
+#### 2) Collection-valued Association Path (컬렉션 값 연관 경)
 - 연관 관계의 대상이 Collection인 필드.
 - 묵시적 INNER JOIN이 발생하며, 더 이상 경로 탐색이 불가하다.
 - 단, FROM 절에서 명시적 JOIN을 통해 별칭을 얻으면 별칭을 통해 탐색할 수 있다.
@@ -63,4 +63,16 @@ Hibernate:
 ```java
 @OneToMany
 @ManyToMany
+```
+#### [코드 2-1] - 가능
+```java
+String query = "select t.members from Team t";
+```
+#### [코드 2-2] - 불가능
+```java
+String query = "select t.members.username from Team t";
+```
+#### [코드 2-3] - 가능
+```java
+String query = "select m.username from Team t join t.members m";
 ```
