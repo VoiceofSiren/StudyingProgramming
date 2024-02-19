@@ -35,6 +35,26 @@ SELECT m.username        // 상태 필드
 @ManyToOne
 @OneToOne
 ```
+#### [코드 1]
+```java
+String query = "select m.team from Member m";
+```
+#### [결과 1]
+```plaintext
+Hibernate: 
+    /* select
+        m.team 
+    from
+        Member m */ select
+            t1_0.team_id,
+            t1_0.name 
+        from
+            member m1_0 
+        join
+            team t1_0 
+                on t1_0.team_id=m1_0.team_id
+```
+#### --> 별도의 JPQL에 JOIN 문을 입력하지 않아도 묵시적으로 JOIN 문이 실행되는 것을 확인할 수 있다.
 #### 2) Collection-valued Association Path (컬렉션 값 연관 필드)
 - 연관 관계의 대상이 Collection인 필드.
 - 묵시적 INNER JOIN이 발생하며, 더 이상 경로 탐색이 불가하다.
