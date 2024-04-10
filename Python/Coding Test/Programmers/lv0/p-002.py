@@ -1,10 +1,13 @@
+'''
+https://school.programmers.co.kr/learn/courses/30/lessons/181927
+'''
+
 def solution(num_list):
-    answer = num_list
     if num_list[-2] < num_list[-1]:
-        answer.append(num_list[-1] - num_list[-2])
+        num_list.append(num_list[-1] - num_list[-2])
     else:
-        answer.append(num_list[-1] * 2)
-    return answer
+        num_list.append(num_list[-1] * 2)
+    return num_list
 
 def str_to_list(string):
   # 문자열을 리스트로 변환
@@ -16,12 +19,3 @@ def str_to_list(string):
 
 num_list = str_to_list(input())
 print(solution(num_list))
-
-'''
-def solution(num_list):        
-    if num_list[-2] < num_list[-1]:
-        num_list.append(num_list[-1] - num_list[-2])
-    else:
-        num_list.append(num_list[-1] * 2)
-    return num_list
-'''

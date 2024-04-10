@@ -1,3 +1,7 @@
+'''
+https://school.programmers.co.kr/learn/courses/30/lessons/181879
+'''
+
 def solution(num_list):
     if len(num_list) >= 11:
         answer = 0
