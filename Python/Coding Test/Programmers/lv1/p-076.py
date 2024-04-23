@@ -14,25 +14,28 @@ def solution(today, terms, privacies):
         terms_dict[term.split()[0]] = int(term.split()[1])
 
     for i, privacy in enumerate(privacies):
-        p_day = privacy.split()[0].strip('""').split('.')
+        p_day = privacy.split()[0].strip('').split('.')
         p_year, p_month, p_date = int(p_day[0]), int(p_day[1]), int(p_day[2])
         p_term = privacy.split()[1]
 
-        for j in range(terms_dict[p_term] * 28):
+
+        for j in range(terms_dict[p_term] * 28-1):
             p_date += 1
             if p_date > 28:
                 p_date = 1
                 p_month += 1
                 if p_month > 12:
+                    p_date = 1
                     p_month = 1
                     p_year += 1
-        if p_year > year:
+
+        if p_year < year:
             answer.append(i + 1)
         elif p_year == year:
-            if p_month > month:
+            if p_month < month:
                 answer.append(i + 1)
             elif p_month == month:
-                if p_date > p_date:
+                if p_date < date:
                     answer.append(i + 1)
 
     return answer
