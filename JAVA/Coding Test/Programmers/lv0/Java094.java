@@ -1,9 +1,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Java090 {
+public class Java094 {
     /*
-    https://school.programmers.co.kr/learn/courses/30/lessons/120841?language=java
+    https://school.programmers.co.kr/learn/courses/30/lessons/120847
      */
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -11,24 +11,16 @@ public class Java090 {
 
         String inputString = scanner.nextLine();
         String[] strArr = inputString.substring(1, inputString.length() - 1).split(", ");
-        int[] dot = solution.convert(strArr);
+        int[] numbers = solution.convert(strArr);
 
-        System.out.println(solution.solution(dot));
+        System.out.println(solution.solution(numbers));
     }
 
     private static class Solution {
-        public int solution(int[] dot) {
-            int x = dot[0];
-            int y = dot[1];
-            if (x > 0 && y > 0) {
-                return 1;
-            } else if (x < 0 && y > 0) {
-                return 2;
-            } else if (x < 0 && y < 0) {
-                return 3;
-            } else {
-                return 4;
-            }
+        public int solution(int[] numbers) {
+            numbers = Arrays.stream(numbers).sorted().toArray();
+            int len = numbers.length;
+            return numbers[len - 2] * numbers[len - 1];
         }
 
         public int[] convert(String[] input_arr) {
@@ -42,9 +34,9 @@ public class Java090 {
 }
 
 /*
-[2, 4]
+[1, 2, 3, 4, 5]
  */
 
 /*
-[-7, 9]
+[0, 31, 24, 10, 1, 9]
  */
